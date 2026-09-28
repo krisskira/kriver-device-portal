@@ -165,3 +165,78 @@ body {
     scroll-behavior: auto;
   }
 }
+
+.mark-orbit {
+  transform-box: view-box;
+  transform-origin: 193.06px 193.06px;
+}
+
+.mark-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.mark-core {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mark-orbit-cw {
+    animation: mark-orbit-cw var(--mark-time) cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .mark-orbit-ccw {
+    animation: mark-orbit-ccw var(--mark-time) cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .mark-spin-cw {
+    animation: mark-spin-cw var(--mark-time) cubic-bezier(0.7, 0, 0.3, 1) infinite;
+  }
+
+  .mark-spin-ccw {
+    animation: mark-spin-ccw var(--mark-time) cubic-bezier(0.7, 0, 0.3, 1) infinite;
+  }
+
+  .mark-core {
+    animation: mark-core 3.2s ease-in-out infinite;
+  }
+
+  .kriver-mark:hover .mark-orbit,
+  a:focus-visible .kriver-mark .mark-orbit {
+    animation-duration: calc(var(--mark-time) / 3);
+  }
+}
+
+@keyframes mark-orbit-cw {
+  0%, 14% { rotate: 0deg; }
+  25%, 39% { rotate: 90deg; }
+  50%, 64% { rotate: 180deg; }
+  75%, 89% { rotate: 270deg; }
+  100% { rotate: 360deg; }
+}
+
+@keyframes mark-orbit-ccw {
+  0%, 14% { rotate: 0deg; }
+  25%, 39% { rotate: -90deg; }
+  50%, 64% { rotate: -180deg; }
+  75%, 89% { rotate: -270deg; }
+  100% { rotate: -360deg; }
+}
+
+@keyframes mark-spin-cw {
+  0%, 30% { rotate: 0deg; }
+  50%, 80% { rotate: 180deg; }
+  100% { rotate: 360deg; }
+}
+
+@keyframes mark-spin-ccw {
+  0%, 30% { rotate: 0deg; }
+  50%, 80% { rotate: -180deg; }
+  100% { rotate: -360deg; }
+}
+
+@keyframes mark-core {
+  0%, 100% { scale: 1; opacity: 1; }
+  50% { scale: 1.6; opacity: 0.7; }
+}

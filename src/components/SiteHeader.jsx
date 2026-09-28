@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import { markInk, markOnDark } from '../brand/logos';
+import { HeaderMark } from './HeaderMark';
 import { wrap } from './layout';
 import { useTheme } from '../hooks/useTheme';
 import { useContent } from '../hooks/useContent';
@@ -58,14 +58,7 @@ export function SiteHeader() {
     >
       <div className={`${wrap} flex h-[90px] items-center justify-between`}>
         <Link to="/" aria-label="Kriver Devices, ir al inicio" className={`rounded-md ${focusRing}`}>
-          {overlay ? (
-            <img src={markOnDark} alt="" className={markClass} />
-          ) : (
-            <>
-              <img src={markInk} alt="" className={`${markClass} dark:hidden`} />
-              <img src={markOnDark} alt="" className={`${markClass} hidden dark:block`} />
-            </>
-          )}
+          <HeaderMark className={`${markClass} transition-colors duration-300 ${overlay ? 'text-paper' : 'text-[#1b1918] dark:text-paper'}`} />
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex xl:gap-[109px]" aria-label="Principal">
