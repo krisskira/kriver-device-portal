@@ -1,0 +1,152 @@
+{
+  "title": "Nuestros tutoriales y blogs",
+  "lead": "Echa un vistazo a algunas de nuestras contribuciones educativas con la comunidad tecnológica.",
+  "hero": "tutorials-hero",
+  "filters": [
+    { "id": "todos", "label": "Todos" },
+    { "id": "video", "label": "Videos" },
+    { "id": "blog", "label": "Blog" }
+  ],
+  "items": [
+    {
+      "slug": "primer-circuito-esp32",
+      "type": "video",
+      "title": "Primer circuito con ESP32",
+      "excerpt": "Alimentación, un sensor y la primera lectura publicada, sin saltarse el esquema.",
+      "cover": "tutorial-1",
+      "poster": "video",
+      "rating": 5,
+      "minutes": 12,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Antes de soldar, el circuito cabe en una protoboard: ESP32, sensor y una resistencia de pull-up. El video recorre el esquema, la alimentación de 3.3 V y la primera lectura que llega por el puerto serie."
+        }
+      ]
+    },
+    {
+      "slug": "sitio-de-servicios",
+      "type": "blog",
+      "title": "Cómo estructurar un sitio de servicios",
+      "excerpt": "Una portada, una lista de trabajos y un formulario. Nada más hasta que el mensaje esté claro.",
+      "cover": "tutorial-2",
+      "rating": 4.5,
+      "minutes": 8,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "La portada responde tres cosas: qué haces, para quién y cómo empezar. Si el visitante tiene que interpretar el hero, el resto de la página llega tarde.",
+          "code": "{\n  \"name\": \"app_electron\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"src/index.js\",\n  \"scripts\": {\n    \"start\": \"electron src/index.js\"\n  },"
+        },
+        {
+          "heading": "Tema 02",
+          "body": "Los proyectos y los artículos salen de datos, no del maquetado. Así el texto se puede corregir sin abrir el componente, y más adelante el mismo contrato lo sirve un backend.",
+          "code": "const home = useContent('/home/home');\nconst tutorials = useContent('/tutorials/tutorials');"
+        }
+      ]
+    },
+    {
+      "slug": "carcasa-en-una-tarde",
+      "type": "video",
+      "title": "Modelar una carcasa en una tarde",
+      "excerpt": "De la medida de la placa al cierre que sí imprime, con tolerancias explícitas.",
+      "cover": "tutorial-3",
+      "poster": "video",
+      "rating": 4.5,
+      "minutes": 16,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Se mide la placa, se deja holgura para el conector y se decide el cierre antes de decorar. El video muestra el orden: volumen, vaciado, postes y recién ahí los radios."
+        }
+      ]
+    },
+    {
+      "slug": "de-la-idea-al-prototipo",
+      "type": "blog",
+      "title": "De la idea al prototipo IoT",
+      "excerpt": "Una lista corta para no construir el producto entero el primer fin de semana.",
+      "cover": "tutorial-4",
+      "rating": 4.5,
+      "minutes": 7,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El prototipo demuestra una escena: alguien entra y la luz cambia, o la temperatura cruza un umbral y llega un aviso. Si la demo necesita cinco pantallas, todavía no es un prototipo.",
+          "code": "if (temperatura > umbral) {\n  enviarAviso('La temperatura cruzó el umbral');\n}"
+        },
+        {
+          "heading": "Tema 02",
+          "body": "Se anota qué quedó simulado. En esta landing, por ejemplo, el contacto y el pago confirman en el navegador. Esa frontera tiene que verse, no esconderse."
+        }
+      ]
+    },
+    {
+      "slug": "tema-claro-y-oscuro",
+      "type": "video",
+      "title": "Tema claro y oscuro sin dos diseños",
+      "excerpt": "Los mismos componentes, otros tokens. El amarillo de marca no se usa como texto pequeño.",
+      "cover": "tutorial-4",
+      "poster": "video",
+      "rating": 4,
+      "minutes": 9,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El color de fondo, la tarjeta y el texto viven en variables. El azul, el coral y el amarillo se quedan como acento. Así el modo oscuro no es una segunda maqueta: es la misma página con otra tinta."
+        }
+      ]
+    },
+    {
+      "slug": "que-pedir-antes-de-una-app",
+      "type": "blog",
+      "title": "Qué pedir antes de construir una app",
+      "excerpt": "Alcance, contenidos y un criterio de terminado. El resto se descubre en el prototipo.",
+      "cover": "tutorial-1",
+      "rating": 5,
+      "minutes": 6,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Hace falta saber quién la abre, qué tiene que lograr en el primer uso y qué contenido ya existe. Sin eso, la interfaz se diseña alrededor de huecos."
+        },
+        {
+          "heading": "Tema 02",
+          "body": "El criterio de terminado cabe en una frase: la persona completa la tarea en el teléfono y en el escritorio, en claro y en oscuro. Lo demás es la siguiente iteración."
+        }
+      ]
+    },
+    {
+      "slug": "api-pequena-para-sensores",
+      "type": "blog",
+      "title": "Una API pequeña para sensores",
+      "excerpt": "Tres rutas bastan para recibir lecturas, consultar la última y marcar alertas.",
+      "cover": "tutorial-3",
+      "rating": 4.5,
+      "minutes": 10,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Cada nodo envía su lectura con un identificador y una marca de tiempo. La API guarda la última y descarta lo que llega fuera de orden.",
+          "code": "app.post('/lecturas', guardarLectura);\napp.get('/lecturas/:nodo', ultimaLectura);\napp.post('/alertas', marcarAlerta);"
+        }
+      ]
+    },
+    {
+      "slug": "publicar-en-github-pages",
+      "type": "video",
+      "title": "Publicar una landing en GitHub Pages",
+      "excerpt": "Build, base relativa y un comando de despliegue. Sin servidor que mantener.",
+      "cover": "tutorial-2",
+      "poster": "video",
+      "rating": 4.5,
+      "minutes": 11,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Vite genera la carpeta dist con rutas relativas. gh-pages sube ese directorio a una rama y GitHub lo sirve como sitio estático."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Kriver Devices",
+  "shortName": "Kriver",
+  "tagline": "Smart Home Technologies",
+  "description": "Estudio de aplicaciones móviles, sitios web y sistemas para el hogar conectado.",
+  "owner": "Cristian David Vergara Gómez",
+  "email": "krisskira@gmail.com",
+  "phone": "+573183919187",
+  "phoneDisplay": "+57 318 391 9187",
+  "linkedin": "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
+  "whatsapp": "https://wa.me/573183919187",
+  "github": "https://github.com/krisskira",
+  "nav": [
+    { "label": "Servicios", "to": "/#servicios" },
+    { "label": "Contacto", "to": "/#contacto" },
+    { "label": "Tutoriales", "to": "/tutoriales" },
+    { "label": "Proyectos", "to": "/proyectos" }
+  ],
+  "cta": { "label": "Contáctanos", "to": "/#contacto" },
+  "payments": { "label": "Pagos", "to": "/pagos" },
+  "coffee": { "label": "Invitame un café", "href": "/pagos" },
+  "social": [
+    {
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "href": "https://www.linkedin.com/in/cristian-david-vergara-gomez/"
+    },
+    {
+      "label": "GitHub",
+      "icon": "github",
+      "href": "https://github.com/krisskira"
+    },
+    {
+      "label": "WhatsApp",
+      "icon": "whatsapp",
+      "href": "https://wa.me/573183919187"
+    }
+  ],
+  "footer": {
+    "pitch": "Aplicaciones móviles, sitios web y soluciones IoT hechas a la medida, desde la idea hasta producción.",
+    "cta": { "label": "Hablemos de tu proyecto", "to": "/#contacto" },
+    "navTitle": "Explora",
+    "contactTitle": "Contacto",
+    "socialTitle": "Sígueme",
+    "socialText": "Código, proyectos y novedades del estudio.",
+    "location": "Colombia · Trabajo remoto",
+    "rights": "Kriver Devices. Todos los derechos reservados.",
+    "backToTop": "Volver arriba"
+  }
+}

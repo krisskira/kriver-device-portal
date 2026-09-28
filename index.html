@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./brand/logo.svg" />
+    <link rel="apple-touch-icon" href="/brand/icon-192.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f7" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Kriver Devices | Soluciones tecnológicas</title>
+    <meta
+      name="description"
+      content="Portafolio de servicios de Kriver Devices: aplicaciones móviles, sitios web, proyectos personales y tutoriales."
+    />
+    <meta name="author" content="Cristian David Vergara Gómez" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:title" content="Kriver Devices | Soluciones tecnológicas" />
+    <meta
+      property="og:description"
+      content="Desarrollo de aplicaciones, sitios web, soluciones IoT, proyectos y tutoriales tecnológicos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Kriver Devices" />
+    <meta property="og:image" content="/brand/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Kriver Devices, soluciones tecnológicas" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kriver Devices | Soluciones tecnológicas" />
+    <meta
+      name="twitter:description"
+      content="Desarrollo de aplicaciones, sitios web, soluciones IoT, proyectos y tutoriales tecnológicos."
+    />
+    <meta name="twitter:image" content="/brand/og-cover.png" />
+    <script id="kriver-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Kriver Devices",
+            "url": "/",
+            "inLanguage": "es-CO",
+            "description": "Desarrollo de aplicaciones, sitios web, soluciones IoT, proyectos y tutoriales tecnológicos."
+          },
+          {
+            "@type": ["ProfessionalService", "Organization"],
+            "name": "Kriver Devices",
+            "url": "/",
+            "logo": "/brand/logo.svg",
+            "image": "/brand/og-cover.png",
+            "email": "mailto:krisskira@gmail.com",
+            "telephone": "+573183919187",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Colombia"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
+              "https://github.com/krisskira"
+            ]
+          },
+          {
+            "@type": "Person",
+            "name": "Cristian David Vergara Gómez",
+            "email": "mailto:krisskira@gmail.com",
+            "telephone": "+573183919187",
+            "sameAs": [
+              "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
+              "https://github.com/krisskira"
+            ],
+            "jobTitle": "Desarrollador e ingeniero"
+          }
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('kriver-theme');
+          var dark =
+            stored === 'dark' ||
+            (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

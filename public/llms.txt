@@ -1,0 +1,20 @@
+# Kriver Devices
+
+Kriver Devices es el portafolio profesional de Cristian David Vergara Gómez.
+Presenta servicios de desarrollo de aplicaciones móviles, sitios web,
+soluciones IoT y prototipos, además de proyectos personales y tutoriales.
+
+## Secciones
+
+- [Inicio](/)
+- [Proyectos](/proyectos)
+- [Tutoriales y blog](/tutoriales)
+- [Contacto](/#contacto)
+
+## Contacto
+
+- Correo: krisskira@gmail.com
+- Teléfono y WhatsApp: +57 318 391 9187
+- LinkedIn: https://www.linkedin.com/in/cristian-david-vergara-gomez/
+- GitHub: https://github.com/krisskira
+

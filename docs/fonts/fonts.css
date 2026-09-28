@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Corbel';
+    src: url('./corbel.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('./Poppins-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NotoSans-Regular';
+    src: url('./NotoSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NotoSans-SemiBold';
+    src: url('./NotoSans-SemiBold.ttf') format('truetype');
+}

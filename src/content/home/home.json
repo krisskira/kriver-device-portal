@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "badge": "Disponible para nuevos proyectos",
+    "title": "Apps, webs e IoT que",
+    "highlight": "impulsan tu negocio",
+    "lead": "Diseño y desarrollo aplicaciones móviles, sitios web y soluciones para el hogar conectado, desde la idea hasta producción.",
+    "primary": { "label": "Cotiza tu proyecto", "to": "/#contacto" },
+    "secondary": { "label": "Ver proyectos", "to": "/proyectos" },
+    "whatsapp": "o escríbeme por WhatsApp",
+    "values": ["Del prototipo a producción", "Código limpio y documentado", "Acompañamiento después del lanzamiento"],
+    "chips": [
+      { "icon": "mobile", "title": "Apps móviles", "text": "iOS · Android" },
+      { "icon": "web", "title": "Sitios y sistemas web", "text": "React · Node.js" },
+      { "icon": "iot", "title": "Smart Home", "text": "ESP32 · IoT" }
+    ],
+    "next": { "label": "Descubre cómo te ayudo", "to": "#servicios" }
+  },
+  "services": {
+    "id": "servicios",
+    "title": ["Nuestras Soluciones", "Tecnológicas"],
+    "items": [
+      {
+        "title": "Aplicativos móviles",
+        "text": "Te ayudamos a crear aplicaciones móviles nativas y multiplataforma para que no haya límite al llegar a tus clientes.",
+        "icon": "smartphone"
+      },
+      {
+        "title": "Aplicaciones y Sitios Web",
+        "text": "Te ayudamos a construir la página web que siempre has deseado, con gran calidad para que puedas promocionar tus productos o servicios.",
+        "icon": "airplay"
+      }
+    ]
+  },
+  "stack": {
+    "title": ["Nuestro Stack de", "Tecnologías"],
+    "items": ["React", "Node.js", "Angular", "Nginx", "Kotlin", "Docker", "Swift", "MySQL", "TypeScript"]
+  },
+  "tutorials": {
+    "title": ["Nuestros tutoriales", "y blogs"],
+    "lead": "Echa un vistazo a algunas de nuestras contribuciones educativas con la comunidad tecnológica.",
+    "limit": 4
+  },
+  "contact": {
+    "id": "contacto",
+    "title": "Contáctanos",
+    "fields": {
+      "name": "Nombre y Apellido",
+      "company": "Empresa",
+      "email": "Correo electrónico",
+      "role": "¿A qué te dedicas?",
+      "phone": "Teléfono",
+      "message": "Cuéntame, ¿cómo puedo ayudarte?"
+    },
+    "roles": ["Emprendedor", "Empresa", "Estudiante", "Otro"],
+    "attachment": "Requerimientos PDF",
+    "submit": "Enviar",
+    "success": "Recibimos tu mensaje en esta simulación. Al conectar el backend, saldrá desde el mismo formulario."
+  }
+}

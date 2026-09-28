@@ -1,0 +1,22 @@
+{
+  "name": "Kriver Devices",
+  "short_name": "Kriver",
+  "description": "Soluciones tecnológicas, aplicaciones, IoT, proyectos y tutoriales.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdf8",
+  "theme_color": "#fffdf8",
+  "icons": [
+    {
+      "src": "/brand/icon-192.png",
+      "sizes": "193x193",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

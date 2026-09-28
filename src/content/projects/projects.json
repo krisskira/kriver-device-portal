@@ -1,0 +1,75 @@
+{
+  "title": "Proyectos personales",
+  "lead": "Trabajos del laboratorio. El texto vive en este JSON: cuando exista backend, la misma ruta devolverá la lista.",
+  "items": [
+    {
+      "slug": "fabricacion-cnc",
+      "title": "Fabricación de máquinas",
+      "year": "2024",
+      "role": "Diseño y construcción",
+      "tags": [
+        "CNC",
+        "Fabricación",
+        "Hardware"
+      ],
+      "summary": "Diseño y construcción de una máquina CNC compacta y de las herramientas que hacen repetible el corte.",
+      "sections": [
+        {
+          "heading": "Para qué existe",
+          "body": "El laboratorio necesitaba cortar piezas pequeñas sin depender de un servicio externo. La máquina se pensó para ser armada, calibrada y documentada por una sola persona."
+        },
+        {
+          "heading": "Qué incluye",
+          "body": "Estructura rígida, electrónica de control y un flujo de trabajo desde el modelo hasta la pieza. El objetivo no fue la velocidad industrial, sino una máquina que se pueda mantener."
+        }
+      ],
+      "cover": "tutorial-3"
+    },
+    {
+      "slug": "gadgets-iot",
+      "title": "Gadgets electrónicos",
+      "year": "2025",
+      "role": "Electrónica y carcasas",
+      "tags": [
+        "IoT",
+        "ESP32",
+        "3D"
+      ],
+      "summary": "Sensores y carcasas impresas para llevar el estado del hogar a un panel simple.",
+      "sections": [
+        {
+          "heading": "El recorte",
+          "body": "Cada gadget hace una sola cosa: temperatura, presencia o consumo. La carcasa se modela alrededor de la placa, no al revés."
+        },
+        {
+          "heading": "Cómo se conecta",
+          "body": "Los nodos publican lecturas en una API pequeña. El panel solo muestra lo que ya está decidido: umbral, última lectura y si hace falta intervenir."
+        }
+      ],
+      "cover": "tutorial-1"
+    },
+    {
+      "slug": "panel-del-hogar",
+      "title": "Panel del hogar",
+      "year": "2025",
+      "role": "Interfaz",
+      "tags": [
+        "Web",
+        "React",
+        "Sensores"
+      ],
+      "summary": "Una interfaz para ver escenas, dispositivos y el historial corto de lo que pasó en casa.",
+      "sections": [
+        {
+          "heading": "La pantalla",
+          "body": "El panel cabe en el teléfono y en una pared. Las escenas son botones grandes. El detalle técnico queda un nivel más abajo."
+        },
+        {
+          "heading": "Lo que todavía es manual",
+          "body": "Hoy los datos de ejemplo viven en JSON. El contrato de la página ya está separado para sustituirlos por el backend sin rehacer la vista."
+        }
+      ],
+      "cover": "tutorial-4"
+    }
+  ]
+}

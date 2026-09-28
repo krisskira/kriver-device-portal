@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Corbel";
+  src: url("./assets/fonts/corbel.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./assets/fonts/NotoSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./assets/fonts/NotoSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Corbel", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-noto: "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #404040;
+  --color-ink-soft: #5d5d5d;
+  --color-paper: #fffdf8;
+  --color-bar: #f7f7f7;
+  --color-blue: #51a1eb;
+  --color-action: #2a74c0;
+  --color-blue-soft: #7ab8f0;
+  --color-red: #eb5151;
+  --color-yellow: #f0df41;
+  --color-form: #4a4a4a;
+  --color-hint: #b9b9b9;
+  --color-star: #fec601;
+
+  --shadow-bar: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 0 8px 2px rgba(0, 0, 0, 0.18);
+  --shadow-bubble: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 80s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+:root {
+  --bg: #ffffff;
+  --fg: #404040;
+  --muted: #5d5d5d;
+  --card: #ffffff;
+  --line: #4a4a4a;
+  --soft: #f2f2f2;
+  --header: #f7f7f7;
+  --panel: #404040;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #1b1b1b;
+  --fg: #f2f2f2;
+  --muted: #c7c7c7;
+  --card: #262626;
+  --line: #8a8a8a;
+  --soft: #2c2c2c;
+  --header: #242424;
+  --panel: #404040;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-soft: var(--soft);
+  --color-header: var(--header);
+  --color-panel: var(--panel);
+}
+
+@utility border-grad-orange {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(225deg, #eb5151 0%, #f0df41 100%) border-box;
+}
+
+@utility border-grad-green {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(59deg, #feed01 0%, #009fe1 100%) border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #51a1eb;
+  color: #fffdf8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
