@@ -61,6 +61,24 @@
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-spin-slow: spin 80s linear infinite;
+  --animate-drift: drift 9s ease-in-out infinite;
+
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-2.5%, -2%);
+    }
+    50% {
+      transform: translate(2%, -3%);
+    }
+    75% {
+      transform: translate(2.5%, 1.5%);
+    }
+  }
+
   --animate-sweep: sweep 4.5s cubic-bezier(0.45, 0, 0.25, 1) infinite;
 
   @keyframes sweep {
@@ -263,13 +281,15 @@ body {
 }
 
 .tech-stack .tech:hover,
-.tech-stack .tech:focus-visible {
+.tech-stack .tech:focus-visible,
+.tech-stack .tech.tech-auto {
   scale: 1.18;
   filter: drop-shadow(0 0 6px rgba(240, 223, 65, 0.85)) drop-shadow(0 0 16px rgba(235, 81, 81, 0.45));
 }
 
 .tech-stack .tech:hover > path:first-of-type,
-.tech-stack .tech:focus-visible > path:first-of-type {
+.tech-stack .tech:focus-visible > path:first-of-type,
+.tech-stack .tech.tech-auto > path:first-of-type {
   stroke-width: 3.5;
 }
 
@@ -277,6 +297,10 @@ body {
   .tech-stack .tech:hover,
   .tech-stack .tech:focus-visible {
     animation: tech-buzz 0.5s ease-in-out 0.08s 1;
+  }
+
+  .tech-stack .tech.tech-auto {
+    animation: tech-auto-buzz 0.85s ease-in-out 1;
   }
 }
 
@@ -286,4 +310,12 @@ body {
   40% { rotate: 6deg; }
   60% { rotate: -4deg; }
   80% { rotate: 2deg; }
+}
+
+@keyframes tech-auto-buzz {
+  0%, 100% { rotate: 0deg; }
+  18% { rotate: -5deg; }
+  36% { rotate: 4deg; }
+  54% { rotate: -3deg; }
+  72% { rotate: 2deg; }
 }

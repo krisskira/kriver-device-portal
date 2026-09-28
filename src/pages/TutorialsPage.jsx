@@ -5,14 +5,24 @@ import { QueryState } from '../components/QueryState';
 import { TutorialCard } from '../components/Cards';
 import { wrap } from '../components/layout';
 import { media, mediaUrl } from '../assets/media';
+import { byDate, byRelevance } from '../lib/posts';
 
 const PAGE_SIZE = 8;
+
+function queryOf({ tipo, orden, pagina }) {
+  const value = {};
+  if (tipo && tipo !== 'todos') value.tipo = tipo;
+  if (orden === 'recientes') value.orden = orden;
+  if (pagina > 1) value.pagina = String(pagina);
+  return value;
+}
 
 export function TutorialsPage() {
   const query = useContent('/tutorials/tutorials');
   const site = useContent('/site/site');
   const [params, setParams] = useSearchParams();
   const filter = params.get('tipo') || 'todos';
+  const sort = params.get('orden') === 'recientes' ? 'recientes' : 'relevancia';
   const page = Math.max(1, Number(params.get('pagina') || 1));
 
   return (
@@ -22,13 +32,11 @@ export function TutorialsPage() {
           data={data}
           coffee={site.data?.coffee}
           filter={filter}
+          sort={sort}
           page={page}
-          onFilter={(tipo) => setParams(tipo === 'todos' ? {} : { tipo })}
-          onPage={(next, tipo) => {
-            const value = { pagina: String(next) };
-            if (tipo !== 'todos') value.tipo = tipo;
-            setParams(value);
-          }}
+          onFilter={(tipo) => setParams(queryOf({ tipo, orden: sort }))}
+          onSort={(orden) => setParams(queryOf({ tipo: filter, orden }))}
+          onPage={(next) => setParams(queryOf({ tipo: filter, orden: sort, pagina: next }))}
         />
       )}
     </QueryState>
@@ -55,11 +63,11 @@ function CoffeeBubble({ coffee }) {
   );
 }
 
-function TutorialList({ data, coffee, filter, page, onFilter, onPage }) {
+function TutorialList({ data, coffee, filter, sort, page, onFilter, onSort, onPage }) {
   const filtered = useMemo(() => {
-    if (filter === 'todos') return data.items;
-    return data.items.filter((item) => item.type === filter);
-  }, [data.items, filter]);
+    const items = filter === 'todos' ? data.items : data.items.filter((item) => item.type === filter);
+    return [...items].sort(sort === 'recientes' ? byDate : byRelevance);
+  }, [data.items, filter, sort]);
 
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const current = Math.min(page, pages);
@@ -124,6 +132,30 @@ function TutorialList({ data, coffee, filter, page, onFilter, onPage }) {
           {coffee ? <CoffeeBubble coffee={coffee} /> : null}
         </div>
 
+        <div
+          className="mt-6 flex flex-wrap items-center gap-3 lg:pl-[86px]"
+          role="group"
+          aria-label="Ordenar el listado. La relevancia tiene prioridad sobre la fecha de publicación."
+        >
+          <span className="font-noto text-sm font-semibold text-muted">Ordenar por</span>
+          {(data.sorts ?? []).map((item) => {
+            const active = sort === item.id;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                aria-pressed={active}
+                onClick={() => onSort(item.id)}
+                className={`h-9 rounded-full px-4 font-noto text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue ${
+                  active ? 'bg-ink text-white dark:bg-paper dark:text-ink' : 'text-muted hover:text-fg'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+        </div>
+
         <img
           src={media['dots-blue']}
           alt=""
@@ -156,7 +188,7 @@ function TutorialList({ data, coffee, filter, page, onFilter, onPage }) {
               <button
                 key={number}
                 type="button"
-                onClick={() => onPage(number, filter)}
+                onClick={() => onPage(number)}
                 className={`h-[41px] w-[41px] rounded-[20px] border border-blue font-display text-base font-semibold ${
                   number === current ? 'bg-action text-white' : 'bg-card text-action dark:text-blue'
                 }`}

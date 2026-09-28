@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { media, mediaUrl } from '../assets/media';
 import { Stars } from './ui';
 
-export function ArticleView({ title, summary, rating, poster, posterLabel, playable = false, sections, aside }) {
+export function ArticleView({ title, summary, rating, poster, posterLabel, playable = false, sections, aside, kicker, back, footer }) {
   return (
     <article className="relative overflow-x-clip pb-[62px] lg:pb-[107px]">
       <span
@@ -26,7 +27,16 @@ export function ArticleView({ title, summary, rating, poster, posterLabel, playa
       <div className="relative mx-auto max-w-[1191px] px-4">
         <header className="flex items-start justify-between gap-6 pt-[94px] lg:pt-[142px]">
           <div className="max-w-[745px]">
-            <h1 className="font-display text-2xl font-bold leading-9 text-fg lg:text-[36px] lg:leading-[54px]">{title}</h1>
+            {back ? (
+              <Link
+                to={back.to}
+                className="font-noto text-sm font-semibold text-action focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue dark:text-blue"
+              >
+                {back.label}
+              </Link>
+            ) : null}
+            {kicker ? <p className="mt-4 font-noto text-sm font-semibold text-action dark:text-blue">{kicker}</p> : null}
+            <h1 className="mt-2 font-display text-2xl font-bold leading-9 text-fg lg:text-[36px] lg:leading-[54px]">{title}</h1>
             {summary ? (
               <p className="mt-2 max-w-[245px] text-sm leading-[17px] text-muted sm:max-w-none lg:mt-8 lg:text-lg lg:leading-[22px]">
                 {summary}
@@ -75,6 +85,7 @@ export function ArticleView({ title, summary, rating, poster, posterLabel, playa
               ) : null}
             </section>
           ))}
+          {footer}
         </div>
       </div>
     </article>

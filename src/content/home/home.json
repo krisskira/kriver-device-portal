@@ -4,22 +4,53 @@
     "title": "Apps, webs e IoT que",
     "highlight": "impulsan tu negocio",
     "lead": "Diseño y desarrollo aplicaciones móviles, sitios web y soluciones para el hogar conectado, desde la idea hasta producción.",
-    "primary": { "label": "Cotiza tu proyecto", "to": "/#contacto" },
-    "secondary": { "label": "Ver proyectos", "to": "/proyectos" },
+    "primary": {
+      "label": "Cotiza tu proyecto",
+      "to": "/#contacto"
+    },
+    "secondary": {
+      "label": "Ver proyectos",
+      "to": "/proyectos"
+    },
     "whatsapp": "o escríbeme por WhatsApp",
-    "values": ["Del prototipo a producción", "Código limpio y documentado", "Acompañamiento después del lanzamiento"],
-    "chips": [
-      { "icon": "mobile", "title": "Apps móviles", "text": "iOS · Android · Multiplataforma" },
-      { "icon": "web", "title": "Sitios y aplicaciones web", "text": "Full Stack · Cloud · Web · TV" },
-      { "icon": "iot", "title": "Hardware · Internet of Things", "text": "ESP32 · STM32 · IoT · Linux embebido" }
+    "values": [
+      "Del prototipo a producción",
+      "Código limpio y documentado",
+      "Acompañamiento después del lanzamiento"
     ],
-    "next": { "label": "Descubre cómo te ayudo", "to": "#servicios" }
+    "chips": [
+      {
+        "icon": "mobile",
+        "title": "Apps móviles",
+        "text": "iOS · Android · Multiplataforma"
+      },
+      {
+        "icon": "web",
+        "title": "Sitios y aplicaciones web",
+        "text": "Full Stack · Cloud · Web · TV"
+      },
+      {
+        "icon": "iot",
+        "title": "Hardware · Internet of Things",
+        "text": "ESP32 · STM32 · IoT · Linux embebido"
+      }
+    ],
+    "next": {
+      "label": "Descubre cómo te ayudo",
+      "to": "#servicios"
+    }
   },
   "services": {
     "id": "servicios",
-    "title": ["Nuestras Soluciones", "Tecnológicas"],
+    "title": [
+      "Nuestras Soluciones",
+      "Tecnológicas"
+    ],
     "lead": "Tres líneas de trabajo para llevar tu idea desde el dispositivo hasta el producto en producción.",
-    "cta": { "label": "Cuéntame qué necesitas", "to": "/#contacto" },
+    "cta": {
+      "label": "Cuéntame qué necesitas",
+      "to": "/#contacto"
+    },
     "items": [
       {
         "title": "Apps móviles",
@@ -42,13 +73,33 @@
     ]
   },
   "stack": {
-    "title": ["Nuestro Stack de", "Tecnologías"],
-    "items": ["React", "Node.js", "Angular", "Nginx", "Kotlin", "Docker", "Swift", "MySQL", "TypeScript"]
+    "title": [
+      "Nuestro Stack de",
+      "Tecnologías"
+    ],
+    "items": [
+      "React",
+      "Node.js",
+      "Angular",
+      "Nginx",
+      "Kotlin",
+      "Docker",
+      "Swift",
+      "MySQL",
+      "TypeScript"
+    ]
   },
   "tutorials": {
-    "title": ["Nuestros tutoriales", "y blogs"],
+    "title": [
+      "Nuestros tutoriales",
+      "y blogs"
+    ],
     "lead": "Echa un vistazo a algunas de nuestras contribuciones educativas con la comunidad tecnológica.",
-    "limit": 4
+    "limit": 4,
+    "cta": {
+      "label": "Ver todos los tutoriales",
+      "to": "/tutoriales"
+    }
   },
   "contact": {
     "id": "contacto",
@@ -61,7 +112,12 @@
       "phone": "Teléfono",
       "message": "Cuéntame, ¿cómo puedo ayudarte?"
     },
-    "roles": ["Emprendedor", "Empresa", "Estudiante", "Otro"],
+    "roles": [
+      "Emprendedor",
+      "Empresa",
+      "Estudiante",
+      "Otro"
+    ],
     "attachment": "Requerimientos PDF",
     "submit": "Enviar",
     "success": "Recibimos tu mensaje en esta simulación. Al conectar el backend, saldrá desde el mismo formulario."

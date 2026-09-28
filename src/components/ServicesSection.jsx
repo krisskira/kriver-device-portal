@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { FlagTitle } from './ui';
@@ -12,12 +13,60 @@ const icons = { smartphone: iconPhone, airplay: iconPc };
 const focusRing = 'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue';
 
 export function ServicesSection({ services, stack }) {
+  const stackRef = useRef(null);
   const stackName = stack.title.join(' ');
   const techStack = useQuery({
     queryKey: ['asset', techStackUrl],
     queryFn: () => fetch(techStackUrl).then((response) => response.text()),
     staleTime: Infinity,
   });
+
+  useEffect(() => {
+    const host = stackRef.current;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!host || !techStack.data || reducedMotion) return undefined;
+
+    let timer;
+    let active;
+    let previous = -1;
+
+    const clear = () => {
+      window.clearTimeout(timer);
+      active?.classList.remove('tech-auto');
+      active = undefined;
+    };
+
+    const highlightRandomTechnology = () => {
+      const technologies = [...host.querySelectorAll('.tech')];
+      if (!technologies.length) return;
+
+      let next = Math.floor(Math.random() * technologies.length);
+      if (technologies.length > 1 && next === previous) next = (next + 1) % technologies.length;
+      previous = next;
+      active = technologies[next];
+      active.classList.add('tech-auto');
+
+      timer = window.setTimeout(() => {
+        active?.classList.remove('tech-auto');
+        active = undefined;
+        timer = window.setTimeout(highlightRandomTechnology, 1100 + Math.random() * 1900);
+      }, 850);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        clear();
+        if (entry.isIntersecting) timer = window.setTimeout(highlightRandomTechnology, 600);
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(host);
+    return () => {
+      observer.disconnect();
+      clear();
+    };
+  }, [techStack.data]);
 
   return (
     <section id={services.id} aria-labelledby="servicios-title" className="scroll-mt-[90px] py-16 lg:py-28">
@@ -56,7 +105,11 @@ export function ServicesSection({ services, stack }) {
           <figcaption className="sr-only">
             {stackName}: {stack.items.join(', ')}
           </figcaption>
-          <div className="aspect-[623/590]" dangerouslySetInnerHTML={{ __html: techStack.data ?? '' }} />
+          <div
+            ref={stackRef}
+            className="aspect-[623/590]"
+            dangerouslySetInnerHTML={{ __html: techStack.data ?? '' }}
+          />
         </figure>
       </div>
     </section>

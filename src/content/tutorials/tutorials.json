@@ -3,9 +3,18 @@
   "lead": "Echa un vistazo a algunas de nuestras contribuciones educativas con la comunidad tecnológica.",
   "hero": "tutorials-hero",
   "filters": [
-    { "id": "todos", "label": "Todos" },
-    { "id": "video", "label": "Videos" },
-    { "id": "blog", "label": "Blog" }
+    {
+      "id": "todos",
+      "label": "Todos"
+    },
+    {
+      "id": "video",
+      "label": "Videos"
+    },
+    {
+      "id": "blog",
+      "label": "Blog"
+    }
   ],
   "items": [
     {
@@ -22,7 +31,8 @@
           "heading": "Tema 01",
           "body": "Antes de soldar, el circuito cabe en una protoboard: ESP32, sensor y una resistencia de pull-up. El video recorre el esquema, la alimentación de 3.3 V y la primera lectura que llega por el puerto serie."
         }
-      ]
+      ],
+      "published": "2026-09-02"
     },
     {
       "slug": "sitio-de-servicios",
@@ -43,7 +53,8 @@
           "body": "Los proyectos y los artículos salen de datos, no del maquetado. Así el texto se puede corregir sin abrir el componente, y más adelante el mismo contrato lo sirve un backend.",
           "code": "const home = useContent('/home/home');\nconst tutorials = useContent('/tutorials/tutorials');"
         }
-      ]
+      ],
+      "published": "2026-08-18"
     },
     {
       "slug": "carcasa-en-una-tarde",
@@ -59,7 +70,8 @@
           "heading": "Tema 01",
           "body": "Se mide la placa, se deja holgura para el conector y se decide el cierre antes de decorar. El video muestra el orden: volumen, vaciado, postes y recién ahí los radios."
         }
-      ]
+      ],
+      "published": "2026-07-09"
     },
     {
       "slug": "de-la-idea-al-prototipo",
@@ -79,7 +91,8 @@
           "heading": "Tema 02",
           "body": "Se anota qué quedó simulado. En esta landing, por ejemplo, el contacto y el pago confirman en el navegador. Esa frontera tiene que verse, no esconderse."
         }
-      ]
+      ],
+      "published": "2026-05-21"
     },
     {
       "slug": "tema-claro-y-oscuro",
@@ -95,7 +108,8 @@
           "heading": "Tema 01",
           "body": "El color de fondo, la tarjeta y el texto viven en variables. El azul, el coral y el amarillo se quedan como acento. Así el modo oscuro no es una segunda maqueta: es la misma página con otra tinta."
         }
-      ]
+      ],
+      "published": "2026-09-20"
     },
     {
       "slug": "que-pedir-antes-de-una-app",
@@ -114,7 +128,8 @@
           "heading": "Tema 02",
           "body": "El criterio de terminado cabe en una frase: la persona completa la tarea en el teléfono y en el escritorio, en claro y en oscuro. Lo demás es la siguiente iteración."
         }
-      ]
+      ],
+      "published": "2026-06-02"
     },
     {
       "slug": "api-pequena-para-sensores",
@@ -130,7 +145,8 @@
           "body": "Cada nodo envía su lectura con un identificador y una marca de tiempo. La API guarda la última y descarta lo que llega fuera de orden.",
           "code": "app.post('/lecturas', guardarLectura);\napp.get('/lecturas/:nodo', ultimaLectura);\napp.post('/alertas', marcarAlerta);"
         }
-      ]
+      ],
+      "published": "2026-04-14"
     },
     {
       "slug": "publicar-en-github-pages",
@@ -146,7 +162,18 @@
           "heading": "Tema 01",
           "body": "Vite genera la carpeta dist con rutas relativas. gh-pages sube ese directorio a una rama y GitHub lo sirve como sitio estático."
         }
-      ]
+      ],
+      "published": "2026-03-03"
+    }
+  ],
+  "sorts": [
+    {
+      "id": "relevancia",
+      "label": "Relevancia"
+    },
+    {
+      "id": "recientes",
+      "label": "Más recientes"
     }
   ]
 }
