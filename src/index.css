@@ -61,6 +61,25 @@
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-spin-slow: spin 80s linear infinite;
+  --animate-sweep: sweep 4.5s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+
+  @keyframes sweep {
+    0% {
+      transform: translateX(500%);
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    62% {
+      opacity: 1;
+    }
+    70%,
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
 
   @keyframes float {
     0%,

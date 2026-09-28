@@ -9,9 +9,9 @@
     "whatsapp": "o escríbeme por WhatsApp",
     "values": ["Del prototipo a producción", "Código limpio y documentado", "Acompañamiento después del lanzamiento"],
     "chips": [
-      { "icon": "mobile", "title": "Apps móviles", "text": "iOS · Android" },
-      { "icon": "web", "title": "Sitios y sistemas web", "text": "React · Node.js" },
-      { "icon": "iot", "title": "Smart Home", "text": "ESP32 · IoT" }
+      { "icon": "mobile", "title": "Apps móviles", "text": "iOS · Android · Multiplataforma" },
+      { "icon": "web", "title": "Sitios y aplicaciones web", "text": "Full Stack · Cloud · Web · TV" },
+      { "icon": "iot", "title": "Hardware · Internet of Things", "text": "ESP32 · STM32 · IoT · Linux embebido" }
     ],
     "next": { "label": "Descubre cómo te ayudo", "to": "#servicios" }
   },

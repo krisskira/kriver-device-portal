@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import { BrandLogo } from './Logo';
+import { markInk, markOnDark } from '../brand/logos';
 import { wrap } from './layout';
 import { useTheme } from '../hooks/useTheme';
 import { useContent } from '../hooks/useContent';
 import { media } from '../assets/media';
 
 const focusRing = 'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue';
+const markClass = 'h-[60px] w-auto lg:h-[70px]';
 
 export function SiteHeader() {
   const { theme, toggle } = useTheme();
@@ -56,8 +57,15 @@ export function SiteHeader() {
       className={`sticky top-0 z-40 transition-[background-color,box-shadow] duration-300 ${overlay ? 'bg-transparent' : 'bg-header shadow-bar'}`}
     >
       <div className={`${wrap} flex h-[90px] items-center justify-between`}>
-        <Link to="/" className={`rounded-md ${focusRing}`}>
-          <BrandLogo className="h-[68px] w-auto" onDark={overlay} />
+        <Link to="/" aria-label="Kriver Devices, ir al inicio" className={`rounded-md ${focusRing}`}>
+          {overlay ? (
+            <img src={markOnDark} alt="" className={markClass} />
+          ) : (
+            <>
+              <img src={markInk} alt="" className={`${markClass} dark:hidden`} />
+              <img src={markOnDark} alt="" className={`${markClass} hidden dark:block`} />
+            </>
+          )}
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex xl:gap-[109px]" aria-label="Principal">

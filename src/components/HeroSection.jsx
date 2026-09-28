@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, ChevronDown, Cpu, MessageCircle, MonitorSmartphone, Smartphone } from 'lucide-react';
+import { ArrowRight, Check, ChevronDown, Cpu, MonitorSmartphone, Smartphone } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
-import { BrandMark } from './BrandMark';
+import { WhatsAppBadge } from './icons';
+import wordmark from '../assets/brand/logo-wordmark-light.svg';
 import { wrap } from './layout';
 
 const chipIcons = { mobile: Smartphone, web: MonitorSmartphone, iot: Cpu };
 const chipPlacement = [
-  'right-[-2%] top-[6%] [animation-delay:0s]',
-  'left-[-6%] top-[58%] [animation-delay:-2.3s]',
-  'bottom-[1%] right-[8%] [animation-delay:-4.6s]',
+  'sm:right-0 sm:top-[2%] [animation-delay:0s]',
+  'sm:left-[-8%] sm:top-[13%] [animation-delay:-2.3s]',
+  'sm:right-[-2%] sm:top-[88%] [animation-delay:-4.6s]',
 ];
 const focusRing = 'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow';
 
@@ -19,7 +20,7 @@ export function HeroSection({ hero }) {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative -mt-[90px] overflow-hidden bg-[linear-gradient(135deg,#454545_0%,#333_55%,#262626_100%)] pt-[90px] text-paper"
+      className="relative -mt-[90px] flex min-h-[100svh] flex-col overflow-hidden bg-[linear-gradient(135deg,#454545_0%,#333_55%,#262626_100%)] pt-[90px] text-paper"
     >
       <div
         aria-hidden="true"
@@ -31,7 +32,7 @@ export function HeroSection({ hero }) {
       />
 
       <div
-        className={`${wrap} relative grid items-center gap-12 pb-16 pt-10 lg:min-h-[min(calc(100svh-90px),760px)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16 lg:pb-24 lg:pt-12`}
+        className={`${wrap} relative grid flex-1 items-center gap-12 pb-16 pt-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16 lg:pb-24 lg:pt-12`}
       >
         <div className="max-w-[640px]">
           {hero.badge ? (
@@ -78,7 +79,7 @@ export function HeroSection({ hero }) {
               aria-label={`${hero.whatsapp} (se abre en una pestaña nueva)`}
               className={`mt-5 inline-flex items-center gap-2 rounded-sm font-noto text-sm font-semibold text-paper/75 underline-offset-4 transition hover:text-yellow hover:underline ${focusRing}`}
             >
-              <MessageCircle size={16} aria-hidden="true" />
+              <WhatsAppBadge size={24} />
               {hero.whatsapp}
             </a>
           ) : null}
@@ -110,10 +111,16 @@ export function HeroSection({ hero }) {
         </a>
       ) : null}
 
-      <div className="grid h-1.5 grid-cols-3" aria-hidden="true">
-        <span className="bg-yellow" />
-        <span className="bg-blue" />
-        <span className="bg-red" />
+      <div className="relative h-1.5" aria-hidden="true">
+        <div className="grid h-full grid-cols-3">
+          <span className="bg-yellow shadow-[0_0_14px_2px_rgba(240,223,65,.55)]" />
+          <span className="bg-blue shadow-[0_0_14px_2px_rgba(81,161,235,.55)]" />
+          <span className="bg-red shadow-[0_0_14px_2px_rgba(235,81,81,.55)]" />
+        </div>
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <span className="absolute inset-y-0 left-0 w-1/5 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent)] mix-blend-screen motion-safe:animate-sweep motion-reduce:hidden" />
+        </div>
+        <span className="pointer-events-none absolute -top-3 left-0 h-7 w-1/5 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,.45),transparent_70%)] blur-sm motion-safe:animate-sweep motion-reduce:hidden" />
       </div>
     </section>
   );
@@ -121,31 +128,30 @@ export function HeroSection({ hero }) {
 
 function HeroArt({ chips }) {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[540px]">
-      <svg viewBox="0 0 520 520" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <circle cx="260" cy="260" r="250" fill="rgba(255,253,248,.03)" stroke="rgba(255,253,248,.08)" />
+    <div className="relative mx-auto w-full max-w-[380px] sm:max-w-[500px] lg:max-w-[600px]">
+      <svg viewBox="0 0 600 520" className="block aspect-[600/520] w-full overflow-visible" aria-hidden="true">
+        <circle cx="230" cy="260" r="228" fill="rgba(255,253,248,.03)" stroke="rgba(255,253,248,.08)" />
         <g className="origin-center [transform-box:fill-box] motion-safe:animate-spin-slow">
-          <circle cx="260" cy="260" r="222" fill="none" stroke="rgba(255,253,248,.22)" strokeDasharray="2 10" strokeLinecap="round" strokeWidth="2" />
+          <circle cx="230" cy="260" r="205" fill="none" stroke="rgba(255,253,248,.22)" strokeDasharray="2 10" strokeLinecap="round" strokeWidth="2" />
         </g>
-        <circle cx="260" cy="260" r="180" fill="none" stroke="rgba(255,253,248,.1)" />
-        <circle cx="260" cy="260" r="125" fill="none" stroke="rgba(255,253,248,.14)" />
-        <path d="M260 22V498M22 260H498" stroke="rgba(255,253,248,.22)" strokeDasharray="4 7" />
-        <rect x="243" y="100" width="34" height="34" fill="#F0DF41" />
-        <rect x="100" y="243" width="34" height="34" fill="#EB5151" />
-        <rect x="243" y="386" width="34" height="34" fill="#51A1EB" />
+        <circle cx="230" cy="260" r="165" fill="none" stroke="rgba(255,253,248,.1)" />
+        <circle cx="230" cy="260" r="115" fill="none" stroke="rgba(255,253,248,.14)" />
+        <path d="M230 40V480M10 260H450" stroke="rgba(255,253,248,.22)" strokeDasharray="4 7" />
+        <rect x="213" y="126" width="34" height="34" fill="#F0DF41" />
+        <rect x="96" y="243" width="34" height="34" fill="#EB5151" />
+        <rect x="213" y="398" width="34" height="34" fill="#51A1EB" />
+        <image href={wordmark} x="160.4" y="156" width="423" height="229.8" className="drop-shadow-[0_12px_30px_rgba(0,0,0,.35)]" />
       </svg>
 
-      <BrandMark className="absolute left-[36%] top-[29%] w-[56%] text-paper drop-shadow-[0_12px_30px_rgba(0,0,0,.35)]" />
-
-      <ul className="contents">
+      <ul className="mt-2 grid gap-3 sm:contents">
         {chips.map((chip, index) => {
           const Icon = chipIcons[chip.icon] || Cpu;
           return (
             <li
               key={chip.title}
-              className={`absolute flex items-center gap-3 rounded-2xl border border-paper/15 bg-[#2a2a2a]/70 py-2 pl-2 pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,.7)] backdrop-blur-md motion-safe:animate-float ${chipPlacement[index % chipPlacement.length]}`}
+              className={`flex items-center gap-3 rounded-2xl border border-paper/15 bg-[#2a2a2a]/75 py-2 pl-2 pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,.7)] backdrop-blur-md sm:absolute sm:max-w-[78%] sm:-translate-x-5 sm:motion-safe:animate-float ${chipPlacement[index % chipPlacement.length]}`}
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-paper/10 text-yellow sm:h-10 sm:w-10">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-paper/10 text-yellow sm:h-10 sm:w-10">
                 <Icon size={18} aria-hidden="true" />
               </span>
               <span className="leading-tight">
