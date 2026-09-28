@@ -16,8 +16,9 @@ export function ThemeProvider({ children }) {
     document.documentElement.classList.toggle('dark', theme === 'dark');
     document.documentElement.style.colorScheme = theme;
     localStorage.setItem(STORAGE_KEY, theme);
-    const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? '#242424' : '#f7f7f7');
+    document
+      .querySelectorAll('meta[name="theme-color"]')
+      .forEach((meta) => meta.setAttribute('content', theme === 'dark' ? '#242424' : '#f7f7f7'));
   }, [theme]);
 
   const toggle = () => setTheme((current) => (current === 'dark' ? 'light' : 'dark'));

@@ -10,19 +10,15 @@ const borders = {
 
 function MediaCard({ to, cover, title, text, variant = 'orange', rating, actionLabel, badge, meta }) {
   return (
-    <article className={`flex min-h-[403px] flex-col rounded-[14px] shadow-card ${borders[variant]}`}>
-      <Link
-        to={to}
-        aria-label={`${actionLabel}: ${title}`}
-        className="group flex flex-1 flex-col rounded-[12px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
-      >
+    <article className={`group relative flex min-h-[403px] flex-col rounded-[14px] shadow-card ${borders[variant]}`}>
+      <div className="flex flex-1 flex-col">
         <div className="relative h-[174px] shrink-0 overflow-hidden rounded-t-[12px] bg-soft">
           {cover ? (
             <img
               src={mediaUrl(cover)}
               alt=""
               loading="lazy"
-              className="h-full w-full object-cover transition-[scale] duration-700 ease-out group-hover:scale-110 group-focus-visible:scale-110 motion-safe:group-hover:animate-drift motion-safe:group-focus-visible:animate-drift"
+              className="h-full w-full object-cover transition-[scale] duration-700 ease-out group-hover:scale-110 group-has-[a:focus-visible]:scale-110 motion-safe:group-hover:animate-drift motion-safe:group-has-[a:focus-visible]:animate-drift"
             />
           ) : null}
           <span className="absolute inset-0 bg-[rgba(30,30,30,0.3)]" aria-hidden="true" />
@@ -34,7 +30,13 @@ function MediaCard({ to, cover, title, text, variant = 'orange', rating, actionL
         </div>
         <div className="flex flex-1 flex-col px-3 pb-3 pt-3">
           <h3 className="line-clamp-2 font-display text-xl font-semibold leading-[30px] text-fg group-hover:text-action dark:group-hover:text-blue">
-            {title}
+            <Link
+              to={to}
+              className="outline-none after:absolute after:inset-0 after:rounded-[14px] after:content-[''] focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-blue"
+            >
+              <span className="sr-only">{actionLabel}: </span>
+              {title}
+            </Link>
           </h3>
           <p className="mt-3 line-clamp-3 max-w-[290px] text-lg leading-[22px] text-muted">{text}</p>
           {meta ? <p className="mt-3 font-noto text-sm text-muted">{meta}</p> : null}
@@ -48,7 +50,7 @@ function MediaCard({ to, cover, title, text, variant = 'orange', rating, actionL
             </span>
           </div>
         </div>
-      </Link>
+      </div>
     </article>
   );
 }

@@ -104,12 +104,24 @@
   "contact": {
     "id": "contacto",
     "title": "Contáctanos",
+    "kicker": "Hablemos de tu proyecto",
+    "lead": "Cuéntame qué quieres construir. Te respondo con preguntas concretas, siguientes pasos y una estimación inicial.",
+    "aside": {
+      "title": "¿Prefieres un canal directo?",
+      "text": "Escríbeme por correo o WhatsApp; también sirve para enviar referencias o archivos pesados.",
+      "steps": [
+        "Me cuentas la idea",
+        "Te propongo alcance y tiempos",
+        "Construimos y lanzamos"
+      ]
+    },
     "fields": {
-      "name": "Nombre y Apellido",
-      "company": "Empresa",
+      "name": "Nombre y apellido",
+      "company": "Empresa (opcional)",
       "email": "Correo electrónico",
+      "phone": "Teléfono o WhatsApp",
       "role": "¿A qué te dedicas?",
-      "phone": "Teléfono",
+      "services": "¿Qué necesitas?",
       "message": "Cuéntame, ¿cómo puedo ayudarte?"
     },
     "roles": [
@@ -118,8 +130,34 @@
       "Estudiante",
       "Otro"
     ],
-    "attachment": "Requerimientos PDF",
-    "submit": "Enviar",
-    "success": "Recibimos tu mensaje en esta simulación. Al conectar el backend, saldrá desde el mismo formulario."
+    "services": [
+      "App móvil",
+      "Sitio o aplicación web",
+      "Hardware · IoT",
+      "Asesoría"
+    ],
+    "attachment": {
+      "label": "Adjunta requerimientos",
+      "hint": "PDF de máximo 5 MB (opcional)",
+      "remove": "Quitar archivo"
+    },
+    "maxMessage": 1000,
+    "errors": {
+      "name": "Escribe tu nombre.",
+      "email": "Escribe un correo válido.",
+      "phone": "Escribe un teléfono válido.",
+      "message": "Cuéntame un poco más (mínimo 20 caracteres).",
+      "file": "El archivo debe ser un PDF de máximo 5 MB.",
+      "summary": "Revisa los campos marcados."
+    },
+    "privacy": "Solo uso tus datos para responder a esta solicitud.",
+    "submit": "Enviar mensaje",
+    "sending": "Enviando…",
+    "success": {
+      "title": "¡Gracias, {name}!",
+      "text": "Recibimos tu mensaje en esta simulación. Al conectar el backend, saldrá desde el mismo formulario.",
+      "whatsapp": "Continuar por WhatsApp",
+      "again": "Enviar otro mensaje"
+    }
   }
 }

@@ -1,62 +1,91 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-CO" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./brand/logo.svg" />
-    <link rel="apple-touch-icon" href="/brand/icon-192.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f7f7f7" />
-    <meta name="color-scheme" content="light dark" />
-    <title>Kriver Devices | Soluciones tecnológicas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Kriver Devices | Apps móviles, sitios web e IoT a la medida</title>
     <meta
       name="description"
-      content="Portafolio de servicios de Kriver Devices: aplicaciones móviles, sitios web, proyectos personales y tutoriales."
+      content="Kriver Devices diseña y desarrolla apps móviles iOS y Android, sitios y aplicaciones web full stack y soluciones IoT con ESP32 y STM32, desde la idea hasta producción."
+    />
+    <meta
+      name="keywords"
+      content="desarrollo de apps móviles, desarrollo web, full stack, IoT, ESP32, STM32, Linux embebido, React, Node.js, Kotlin, Swift, Colombia, Kriver Devices"
     />
     <meta name="author" content="Cristian David Vergara Gómez" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta property="og:title" content="Kriver Devices | Soluciones tecnológicas" />
-    <meta
-      property="og:description"
-      content="Desarrollo de aplicaciones, sitios web, soluciones IoT, proyectos y tutoriales tecnológicos."
-    />
+    <meta name="creator" content="Cristian David Vergara Gómez" />
+    <meta name="publisher" content="Kriver Devices" />
+    <meta name="application-name" content="Kriver Devices" />
+    <meta name="apple-mobile-web-app-title" content="Kriver" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="geo.region" content="CO" />
+    <meta name="geo.placename" content="Colombia" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#242424" />
+    <meta name="color-scheme" content="light dark" />
+
+    <link rel="canonical" href="%SITE_URL%/" />
+    <link rel="alternate" hreflang="es-CO" href="%SITE_URL%/" />
+    <link rel="alternate" hreflang="x-default" href="%SITE_URL%/" />
+    <link rel="sitemap" type="application/xml" href="%SITE_URL%/sitemap.xml" />
+    <link rel="icon" type="image/svg+xml" href="./brand/logo.svg" />
+    <link rel="apple-touch-icon" href="./brand/icon-192.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="author" href="./llms.txt" type="text/plain" />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:site_name" content="Kriver Devices" />
-    <meta property="og:image" content="/brand/og-cover.png" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:title" content="Kriver Devices | Apps móviles, sitios web e IoT a la medida" />
+    <meta
+      property="og:description"
+      content="Apps móviles, sitios y aplicaciones web y soluciones IoT, desde la idea hasta producción."
+    />
+    <meta property="og:image" content="%SITE_URL%/brand/og-cover.png" />
+    <meta property="og:image:secure_url" content="%SITE_URL%/brand/og-cover.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Kriver Devices, soluciones tecnológicas" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kriver Devices | Soluciones tecnológicas" />
+    <meta name="twitter:title" content="Kriver Devices | Apps móviles, sitios web e IoT a la medida" />
     <meta
       name="twitter:description"
-      content="Desarrollo de aplicaciones, sitios web, soluciones IoT, proyectos y tutoriales tecnológicos."
+      content="Apps móviles, sitios y aplicaciones web y soluciones IoT, desde la idea hasta producción."
     />
-    <meta name="twitter:image" content="/brand/og-cover.png" />
+    <meta name="twitter:image" content="%SITE_URL%/brand/og-cover.png" />
+    <meta name="twitter:image:alt" content="Kriver Devices, soluciones tecnológicas" />
+
     <script id="kriver-structured-data" type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
             "@type": "WebSite",
+            "@id": "%SITE_URL%/#website",
             "name": "Kriver Devices",
-            "url": "/",
+            "url": "%SITE_URL%/",
             "inLanguage": "es-CO",
-            "description": "Desarrollo de aplicaciones, sitios web, soluciones IoT, proyectos y tutoriales tecnológicos."
+            "description": "Apps móviles, sitios y aplicaciones web y soluciones IoT, desde la idea hasta producción.",
+            "publisher": { "@id": "%SITE_URL%/#business" }
           },
           {
             "@type": ["ProfessionalService", "Organization"],
+            "@id": "%SITE_URL%/#business",
             "name": "Kriver Devices",
-            "url": "/",
-            "logo": "/brand/logo.svg",
-            "image": "/brand/og-cover.png",
-            "email": "mailto:krisskira@gmail.com",
+            "url": "%SITE_URL%/",
+            "logo": "%SITE_URL%/brand/logo.svg",
+            "image": "%SITE_URL%/brand/og-cover.png",
+            "email": "krisskira@gmail.com",
             "telephone": "+573183919187",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Colombia"
-            },
+            "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+            "areaServed": { "@type": "Country", "name": "Colombia" },
+            "founder": { "@id": "%SITE_URL%/#person" },
             "sameAs": [
               "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
               "https://github.com/krisskira"
@@ -64,14 +93,16 @@
           },
           {
             "@type": "Person",
+            "@id": "%SITE_URL%/#person",
             "name": "Cristian David Vergara Gómez",
-            "email": "mailto:krisskira@gmail.com",
+            "email": "krisskira@gmail.com",
             "telephone": "+573183919187",
+            "jobTitle": "Desarrollador e ingeniero",
+            "worksFor": { "@id": "%SITE_URL%/#business" },
             "sameAs": [
               "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
               "https://github.com/krisskira"
-            ],
-            "jobTitle": "Desarrollador e ingeniero"
+            ]
           }
         ]
       }
@@ -97,6 +128,22 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <main style="font-family: system-ui, sans-serif; max-width: 720px; margin: 48px auto; padding: 0 20px; line-height: 1.6">
+        <h1>Kriver Devices: apps móviles, sitios web e IoT a la medida</h1>
+        <p>
+          Diseño y desarrollo de aplicaciones móviles (iOS, Android y multiplataforma), sitios y aplicaciones web
+          full stack y soluciones de hardware e Internet of Things con ESP32, STM32 y Linux embebido.
+        </p>
+        <ul>
+          <li><a href="./tutoriales">Tutoriales y blog</a></li>
+          <li><a href="./proyectos">Proyectos</a></li>
+          <li><a href="mailto:krisskira@gmail.com">krisskira@gmail.com</a></li>
+          <li><a href="https://wa.me/573183919187">WhatsApp +57 318 391 9187</a></li>
+        </ul>
+        <p>Activa JavaScript para ver el sitio completo.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

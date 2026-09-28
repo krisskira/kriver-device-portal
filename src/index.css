@@ -61,6 +61,15 @@
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-spin-slow: spin 80s linear infinite;
+  --animate-fade-up: fade-up 0.45s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+
   --animate-drift: drift 9s ease-in-out infinite;
 
   @keyframes drift {
