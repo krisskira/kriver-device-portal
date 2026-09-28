@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useContent } from '../hooks/useContent';
 import { QueryState } from '../components/QueryState';
 import { HeroSection } from '../components/HeroSection';
+import { ServicesSection } from '../components/ServicesSection';
 import { TutorialCard } from '../components/Cards';
 import { ContactSection } from '../components/ContactSection';
 import { FlagTitle } from '../components/ui';
@@ -30,78 +31,10 @@ export function HomePage() {
   return (
     <>
       <HeroSection hero={content.hero} />
-      <Services services={content.services} stack={content.stack} />
+      <ServicesSection services={content.services} stack={content.stack} />
       <TutorialsSection section={content.tutorials} posts={posts} />
       <ContactSection contact={content.contact} />
     </>
-  );
-}
-
-function Services({ services, stack }) {
-  return (
-    <section
-      id={services.id}
-      aria-labelledby="servicios-title"
-      className={`${wrap} scroll-mt-[90px] overflow-x-clip pt-[75px] lg:pt-[117px]`}
-    >
-      <FlagTitle id="servicios-title" lines={services.title} />
-      <div className="mt-[54px] grid justify-items-center gap-[74px] lg:mt-44 lg:grid-cols-2 lg:items-center lg:justify-items-start lg:gap-x-[116px] min-[1680px]:grid-cols-[357px_424px_1fr]">
-        {services.items.map((item) => (
-          <article key={item.title} className="flex max-w-[297px] flex-col items-center text-center lg:max-w-none lg:items-start lg:text-left">
-            <img src={media[item.icon]} alt="" aria-hidden="true" className="h-[69px] w-[69px] lg:h-[89px] lg:w-[89px]" />
-            <h3 className="mt-9 font-display text-base font-bold leading-6 text-muted lg:mt-[39px] lg:text-2xl lg:leading-9">
-              {item.title}
-            </h3>
-            <p className="mt-6 text-sm leading-[17px] text-muted lg:mt-[23px] lg:text-xl lg:leading-6">{item.text}</p>
-          </article>
-        ))}
-        <StackOrbit stack={stack} />
-      </div>
-    </section>
-  );
-}
-
-function StackOrbit({ stack }) {
-  const [open, setOpen] = useState(false);
-  const [first, second] = stack.title;
-
-  return (
-    <div
-      className="relative mt-[111px] justify-self-center lg:col-span-2 lg:mt-[260px] min-[1680px]:col-span-1 min-[1680px]:mt-0 min-[1680px]:justify-self-end"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-controls="stack-lista"
-        onClick={() => setOpen((value) => !value)}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setOpen(false)}
-        className={`flex items-center gap-6 rounded-full text-right transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue lg:gap-[49px] ${
-          open ? 'lg:opacity-0' : ''
-        }`}
-      >
-        <span className="font-display text-2xl font-semibold leading-9 text-muted lg:text-[32px] lg:leading-[48px]">
-          {first}
-          <span className="block">{second}</span>
-        </span>
-        <img src={media['stack-button']} alt="" aria-hidden="true" className="h-[74px] w-[74px] lg:h-[130px] lg:w-[130px]" />
-      </button>
-      <ul id="stack-lista" className="sr-only">
-        {stack.items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-      <img
-        src={media['stack-orbit']}
-        alt=""
-        aria-hidden="true"
-        className={`pointer-events-none mx-auto mt-6 w-[min(92vw,396px)] transition-all duration-300 lg:absolute lg:left-[-176px] lg:top-[-252px] lg:z-10 lg:mt-0 lg:w-[651px] lg:max-w-none ${
-          open ? 'block opacity-100 lg:scale-100' : 'hidden opacity-0 lg:block lg:scale-95'
-        }`}
-      />
-    </div>
   );
 }
 

@@ -240,3 +240,50 @@ body {
   0%, 100% { scale: 1; opacity: 1; }
   50% { scale: 1.6; opacity: 0.7; }
 }
+
+.tech-stack {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.tech-stack .tech {
+  cursor: pointer;
+  outline: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    scale 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.25s ease;
+}
+
+.tech-stack .tech > path:first-of-type {
+  transition: stroke-width 0.25s ease;
+}
+
+.tech-stack .tech:hover,
+.tech-stack .tech:focus-visible {
+  scale: 1.18;
+  filter: drop-shadow(0 0 6px rgba(240, 223, 65, 0.85)) drop-shadow(0 0 16px rgba(235, 81, 81, 0.45));
+}
+
+.tech-stack .tech:hover > path:first-of-type,
+.tech-stack .tech:focus-visible > path:first-of-type {
+  stroke-width: 3.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tech-stack .tech:hover,
+  .tech-stack .tech:focus-visible {
+    animation: tech-buzz 0.5s ease-in-out 0.08s 1;
+  }
+}
+
+@keyframes tech-buzz {
+  0%, 100% { rotate: 0deg; }
+  20% { rotate: -7deg; }
+  40% { rotate: 6deg; }
+  60% { rotate: -4deg; }
+  80% { rotate: 2deg; }
+}

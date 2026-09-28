@@ -18,16 +18,26 @@
   "services": {
     "id": "servicios",
     "title": ["Nuestras Soluciones", "Tecnológicas"],
+    "lead": "Tres líneas de trabajo para llevar tu idea desde el dispositivo hasta el producto en producción.",
+    "cta": { "label": "Cuéntame qué necesitas", "to": "/#contacto" },
     "items": [
       {
-        "title": "Aplicativos móviles",
+        "title": "Apps móviles",
+        "tags": "iOS · Android · Multiplataforma",
         "text": "Te ayudamos a crear aplicaciones móviles nativas y multiplataforma para que no haya límite al llegar a tus clientes.",
         "icon": "smartphone"
       },
       {
-        "title": "Aplicaciones y Sitios Web",
+        "title": "Sitios y aplicaciones web",
+        "tags": "Full Stack · Cloud · Web · TV",
         "text": "Te ayudamos a construir la página web que siempre has deseado, con gran calidad para que puedas promocionar tus productos o servicios.",
         "icon": "airplay"
+      },
+      {
+        "title": "Hardware · Internet of Things",
+        "tags": "ESP32 · STM32 · IoT · Linux embebido",
+        "text": "Te ayudamos a conectar sensores, placas y firmware con tu aplicación, para pasar del prototipo al hogar conectado.",
+        "icon": "cpu"
       }
     ]
   },
