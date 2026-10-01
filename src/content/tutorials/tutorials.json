@@ -18,6 +18,233 @@
   ],
   "items": [
     {
+      "slug": "hotplate-reflow-smd",
+      "type": "video",
+      "tags": ["SMD", "Reflow", "ATmega16", "PID", "Firmware", "Hardware abierto"],
+      "title": "HotPlate: reflow SMD sin horno",
+      "excerpt": "Una placa calefactora que sigue un Soldering Profile de cuatro escalones, con control PI predictivo, autoajuste y una app de escritorio. Todo abierto.",
+      "cover": "posts/hotplate/hotplate-demo-poster.jpg",
+      "poster": "posts/hotplate/hotplate-demo-poster.jpg",
+      "video": {
+        "src": "posts/hotplate/hotplate-demo.mp4",
+        "poster": "posts/hotplate/hotplate-demo-poster.jpg",
+        "caption": "Un ciclo HEAT real, acelerado ×16 al calentar y ×120 al enfriar. La curva sale de una traza del banco; la pantalla la dibuja el mismo código que corre en el ATmega16."
+      },
+      "rating": 5,
+      "minutes": 9,
+      "published": "2026-09-30",
+      "sections": [
+        {
+          "heading": "Por qué una placa y no un horno",
+          "body": [
+            "Soldar componentes SMD con cautín funciona hasta que aparece un QFN o una fila de 0402. La pasta de soldar resuelve eso, pero pide calor con disciplina: subir sin quemar, sostener el tiempo justo y enfriar.",
+            "**HotPlate** es mi respuesta: una placa calefactora con dos resistencias PTC, un sensor PT100 y un ATmega16 que ejecuta un **Soldering Profile** de hasta cuatro escalones. Nada de mirar el termómetro y apagar a mano."
+          ]
+        },
+        {
+          "heading": "Un ciclo completo con un solo gesto",
+          "body": "Pulsas **RUN** y el programa HEAT recorre todo el perfil en orden:",
+          "list": [
+            "Espera programada, de `00:00` (inmediato) hasta `12:00`.",
+            "Rampa a la temperatura de cada escalón y meseta de 30 s a 60 min. Los escalones solo suben o se mantienen.",
+            "Aviso de fin con pitidos y el calor ya apagado.",
+            "Enfriamiento con aire hasta la temperatura mínima.",
+            "Salidas apagadas al arrancar, ante un fallo del sensor o al tocar la temperatura máxima."
+          ]
+        },
+        {
+          "heading": "HotPanel: temperatura en grande y una perilla",
+          "body": "La pantalla ST7920 de 128×64 muestra la temperatura, la fase, el escalón en curso con su consigna y el tiempo transcurrido. Con el encoder editas las cuatro rampas y la espera sin conectar nada. Cuando el computador toma el mando, HotPanel lo dice y bloquea el control local.",
+          "gallery": [
+            {
+              "src": "posts/hotplate/hotpanel-idle.png",
+              "alt": "HotPanel en reposo",
+              "caption": "**IDLE**: listo para RUN.",
+              "pixelated": true,
+              "width": 664,
+              "height": 344
+            },
+            {
+              "src": "posts/hotplate/hotpanel-ramp.png",
+              "alt": "HotPanel subiendo en la rampa 2",
+              "caption": "**RUN**: subiendo hacia la consigna.",
+              "pixelated": true,
+              "width": 664,
+              "height": 344
+            },
+            {
+              "src": "posts/hotplate/hotpanel-hold.png",
+              "alt": "HotPanel en meseta",
+              "caption": "**RUN** en meseta: corre el reloj.",
+              "pixelated": true,
+              "width": 664,
+              "height": 344
+            },
+            {
+              "src": "posts/hotplate/hotpanel-alarm.png",
+              "alt": "HotPanel con el aviso de fin",
+              "caption": "**ALM**: perfil terminado.",
+              "pixelated": true,
+              "width": 664,
+              "height": 344
+            },
+            {
+              "src": "posts/hotplate/hotpanel-settings.png",
+              "alt": "HotPanel en Ajustes",
+              "caption": "Ajustes: editando la rampa 1.",
+              "pixelated": true,
+              "width": 664,
+              "height": 344
+            },
+            {
+              "src": "posts/hotplate/hotpanel-usb.png",
+              "alt": "HotPanel controlado por USB",
+              "caption": "**USB**: HotPlate Studio tiene el mando.",
+              "pixelated": true,
+              "width": 664,
+              "height": 344
+            }
+          ]
+        },
+        {
+          "heading": "Frenar antes de llegar",
+          "body": [
+            "Una placa de aluminio tiene inercia: si cortas el calor al tocar la consigna, sigue subiendo. El control es un **PI predictivo**: persigue una referencia que sube a 1,2 °C/s y calcula el error con la temperatura que habrá dentro de 15 s.",
+            "La salida se aplica al relé de estado sólido (MOC3021 + BT136) como tiempo de encendido en ventanas de 1,5 s, con anti-windup. Si durante 3 minutos la potencia va al 95 % y no llega, corta y avisa: una consigna inalcanzable no se queda calentando para siempre."
+          ],
+          "image": {
+            "src": "posts/hotplate/trace-heat-4.webp",
+            "width": 2560,
+            "height": 1080,
+            "alt": "HotPlate Studio con un ciclo HEAT completo: cuatro escalones, aviso y enfriamiento",
+            "caption": "El ciclo del video, tal como lo registró HotPlate Studio."
+          }
+        },
+        {
+          "heading": "Que la placa aprenda sus propias ganancias",
+          "body": [
+            "Adivinar Kp y Ki a ojo es lento. El programa de **autoajuste** hace oscilar la placa alrededor de una consigna con calor todo o nada, mide la amplitud y el periodo de la oscilación y calcula un PI por **Ziegler–Nichols**.",
+            "Las ganancias se guardan en la EEPROM solo cuando el ajuste termina bien. En la corrida de la imagen, a 150 °C y cinco ciclos, salió Kp 78 y Ki 6."
+          ],
+          "image": {
+            "src": "posts/hotplate/autotune-trace.webp",
+            "width": 1600,
+            "height": 329,
+            "alt": "Traza de autoajuste: la temperatura oscila alrededor de 150 °C mientras el calentador conmuta entre 0 y 100 %",
+            "caption": "Autoajuste a 150 °C: cinco ciclos de oscilación."
+          }
+        },
+        {
+          "heading": "HotPlate Studio: el computador como panel",
+          "body": "Es una aplicación de escritorio en Python que habla con HotPlate por USB. Edita el perfil, lanza HEAT o el autoajuste, dibuja en vivo la temperatura contra la consigna y la potencia, marca cada cambio de fase y exporta el registro a CSV. Todo lo que HotPanel no expone (límites, bandas de meseta, aire al final, ganancias) se define aquí y se guarda en el equipo.",
+          "image": {
+            "src": "posts/hotplate/studio-heat.webp",
+            "width": 1920,
+            "height": 1350,
+            "alt": "HotPlate Studio en la pestaña HEAT con el perfil, el estado y la curva en vivo",
+            "caption": "Pestaña HEAT durante un ciclo."
+          }
+        },
+        {
+          "heading": "Todo por el puerto serie",
+          "body": "Studio no tiene privilegios especiales: usa el mismo protocolo que cualquier script. Cinco verbos AT (`MODE`, `RUN`, `STOP`, `CFG`, `STAT`) a 19200 baudios y una trama `$HP` por segundo con temperatura, fase, consigna y potencia.",
+          "code": "AT+MODE=1\nAT+CFG=R,0,150,120\nAT+CFG=R,1,165,90\nAT+CFG=R,2,175,60\nAT+RUN=1\n\n$HP,T=119.6,P=1,A=5,SET=130,DLY=0,RUN=30,EL=311,DU=61,F=0,RI=3,FL=0"
+        },
+        {
+          "heading": "Lo que dicen las trazas",
+          "body": "Cinco corridas HEAT y dos de autoajuste quedaron guardadas y alimentan un test de regresión que corre en el computador. Los números, sin maquillaje:",
+          "list": [
+            "Sobrepaso máximo del PI: **+3,4 °C** en escalones de 10 °C.",
+            "Subida a plena potencia: **0,75 °C/s** cerca de 100 °C.",
+            "Máximo registrado: **171,7 °C**, con consigna de 175 °C.",
+            "Enfriamiento con aire: de 130 a 50 °C entre 12 y 17 minutos."
+          ],
+          "image": {
+            "src": "posts/hotplate/trace-latest.webp",
+            "width": 1652,
+            "height": 358,
+            "alt": "Última traza HEAT: escalones de 150, 165 y 175 °C con la potencia del calentador",
+            "caption": "Última traza: 150 → 165 → 175 °C."
+          }
+        },
+        {
+          "heading": "16 KB bien contados",
+          "body": [
+            "Todo corre en un ATmega16 a 8 MHz: lectura del MAX31865, control, perfil, pantalla y USB, con un planificador cooperativo sin esperas bloqueantes. El firmware ocupa **16 382 de 16 384 bytes** de flash.",
+            "Con ese margen, cada función nueva se mide con `make size` y se anota en un presupuesto. La regla es clara: la interfaz aprobada y el núcleo térmico no se sacrifican para que quepa otra cosa."
+          ]
+        },
+        {
+          "heading": "Qué sigue",
+          "body": [
+            "Falta la prueba que importa: una traza completa por encima de 183 °C, el punto de fusión del Sn63/Pb37, con una placa real encima. Para soldadura sin plomo (≈ 217 °C) primero hay que medir si la placa llega con carga.",
+            "PCB en KiCad, carcasa imprimible, firmware y Studio están abiertos. Mira la [página del proyecto](https://krisskira.github.io/smd-soldering-hotplate/) o ve directo al [repositorio](https://github.com/krisskira/smd-soldering-hotplate). Trabaja con red eléctrica: hazlo bajo tu responsabilidad."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "klog-registros-que-se-buscan",
+      "type": "blog",
+      "tags": ["Logs", "Self-hosted", "Go", "GraphQL", "PostgreSQL", "Redis"],
+      "title": "kLog: los logs se quedan en tu servidor",
+      "excerpt": "Una plataforma self-hosted para capturar, guardar y consultar eventos de aplicaciones e IoT, con ingesta REST y gestión en GraphQL.",
+      "cover": "tutorial-3",
+      "rating": 5,
+      "minutes": 8,
+      "published": "2026-09-29",
+      "sections": [
+        {
+          "heading": "Un lugar propio para los eventos",
+          "body": [
+            "Cuando una API, una web o un gateway de sensores emite un evento, lo habitual es mandarlo a un servicio ajeno. **kLog** parte al revés: es una plataforma open source que se instala en tu propio servidor. Los logs no salen de casa y el costo no depende de un plan por gigabyte.",
+            "No es un montaje obligatorio de Grafana, Loki y Prometheus. Es una aplicación: consola, API y un worker, con Postgres y Redis detrás."
+          ]
+        },
+        {
+          "heading": "Cinco piezas, cada una con su proceso",
+          "body": "El workspace agrupa repositorios hermanos. Cada uno arranca solo y se habla con los demás por URL:",
+          "list": [
+            "**api**: Go. GraphQL para consultar y administrar. REST solo para ingesta y health.",
+            "**web**: consola en React.",
+            "**ingest**: worker Go que consume la cola Redis `klog:jobs:default`.",
+            "**Postgres** guarda el plano de control y los eventos de cada tenant. **Redis** lleva las colas.",
+            "Los contratos compartidos viven aparte, en Go (`klog/goshared`) y en TypeScript (`@klog/shared`)."
+          ]
+        },
+        {
+          "heading": "Escribir por REST, leer por GraphQL",
+          "body": [
+            "Un servicio o un dispositivo no abre GraphQL. Hace `POST /v1/ingest/{tenantId}/events` con un API token de proyecto. El token tiene la forma `klog_<prefijo>_<secreto>`: el secreto se muestra una vez y en la base solo queda el hash.",
+            "La consola, el alta de tenants y la consulta usan GraphQL. El live tail (`eventLive`) existe como contrato y nace apagado: hace falta sesión de usuario y `LIVE_TAIL_ENABLED=true`. Un API token no autentica GraphQL."
+          ],
+          "code": "POST /v1/ingest/{tenantId}/events\nAuthorization: Bearer klog_<prefijo>_<secreto>\n\n{\n  \"applicationId\": \"0190…\",\n  \"message\": \"pedido procesado\",\n  \"payload\": { \"orderId\": \"A-42\" },\n  \"tags\": [\"production\"]\n}"
+        },
+        {
+          "heading": "Cada cliente en su schema",
+          "body": [
+            "Postgres usa un `BIGINT` interno y expone un `public_id` UUIDv7. GraphQL y REST solo aceptan ese identificador público.",
+            "El plano de control (`control`) guarda usuarios, sesiones, tenants, roles y permisos. Los eventos de cada cliente viven en un schema propio, creado desde una plantilla (`tenant_template`). Así un cambio de tablas se escribe una vez y se propaga, sin mezclar los datos de dos organizaciones."
+          ]
+        },
+        {
+          "heading": "Quién puede ver qué",
+          "body": "El acceso no es un único rol de administrador. Hay miembros, permisos y grants por recurso. La cookie de sesión es HttpOnly (`klog_access`) o un JWT bearer; el token no lleva los roles dentro: la API los resuelve contra la sesión guardada. En la ingesta, el token de proyecto entra con el rol `device` y solo puede escribir en las aplicaciones de ese proyecto."
+        },
+        {
+          "heading": "La ingesta no se queda esperando",
+          "body": "La API valida el token, comprueba que la aplicación pertenece al proyecto y persiste el evento. El trabajo posterior —reglas, transforms, webhooks— va a Redis. El worker `ingest` lo consume sin frenar la respuesta. Health de la API en `:3100`; el del worker en `:3001`."
+        },
+        {
+          "heading": "Buscar sin otro motor",
+          "body": [
+            "La búsqueda de la v1 está definida sobre el mismo Postgres: texto completo, caminos dentro del JSON y tolerancia a errores de tipeo con `pg_trgm`. Meilisearch queda como índice de lectura para una versión posterior, no como requisito para arrancar.",
+            "Lo que ya se puede recorrer de punta a punta es el camino corto: registrarse, crear la aplicación, enviar un evento con el token y verlo desde la consola. Transforms, webhooks con reintento y la búsqueda difusa son el siguiente tramo, no una dependencia escondida."
+          ]
+        }
+      ]
+    },
+    {
       "slug": "primer-circuito-esp32",
       "type": "video",
       "title": "Primer circuito con ESP32",
@@ -32,7 +259,8 @@
           "body": "Antes de soldar, el circuito cabe en una protoboard: ESP32, sensor y una resistencia de pull-up. El video recorre el esquema, la alimentación de 3.3 V y la primera lectura que llega por el puerto serie."
         }
       ],
-      "published": "2026-09-02"
+      "published": "2026-09-02",
+      "comingSoon": true
     },
     {
       "slug": "sitio-de-servicios",
@@ -54,7 +282,8 @@
           "code": "const home = useContent('/home/home');\nconst tutorials = useContent('/tutorials/tutorials');"
         }
       ],
-      "published": "2026-08-18"
+      "published": "2026-08-18",
+      "comingSoon": true
     },
     {
       "slug": "carcasa-en-una-tarde",
@@ -71,7 +300,8 @@
           "body": "Se mide la placa, se deja holgura para el conector y se decide el cierre antes de decorar. El video muestra el orden: volumen, vaciado, postes y recién ahí los radios."
         }
       ],
-      "published": "2026-07-09"
+      "published": "2026-07-09",
+      "comingSoon": true
     },
     {
       "slug": "de-la-idea-al-prototipo",
@@ -92,7 +322,8 @@
           "body": "Se anota qué quedó simulado. En esta landing, por ejemplo, el contacto y el pago confirman en el navegador. Esa frontera tiene que verse, no esconderse."
         }
       ],
-      "published": "2026-05-21"
+      "published": "2026-05-21",
+      "comingSoon": true
     },
     {
       "slug": "tema-claro-y-oscuro",
@@ -109,7 +340,8 @@
           "body": "El color de fondo, la tarjeta y el texto viven en variables. El azul, el coral y el amarillo se quedan como acento. Así el modo oscuro no es una segunda maqueta: es la misma página con otra tinta."
         }
       ],
-      "published": "2026-09-20"
+      "published": "2026-09-20",
+      "comingSoon": true
     },
     {
       "slug": "que-pedir-antes-de-una-app",
@@ -129,7 +361,8 @@
           "body": "El criterio de terminado cabe en una frase: la persona completa la tarea en el teléfono y en el escritorio, en claro y en oscuro. Lo demás es la siguiente iteración."
         }
       ],
-      "published": "2026-06-02"
+      "published": "2026-06-02",
+      "comingSoon": true
     },
     {
       "slug": "api-pequena-para-sensores",
@@ -146,7 +379,8 @@
           "code": "app.post('/lecturas', guardarLectura);\napp.get('/lecturas/:nodo', ultimaLectura);\napp.post('/alertas', marcarAlerta);"
         }
       ],
-      "published": "2026-04-14"
+      "published": "2026-04-14",
+      "comingSoon": true
     },
     {
       "slug": "publicar-en-github-pages",
@@ -163,7 +397,183 @@
           "body": "Vite genera la carpeta dist con rutas relativas. gh-pages sube ese directorio a una rama y GitHub lo sirve como sitio estático."
         }
       ],
-      "published": "2026-03-03"
+      "published": "2026-03-03",
+      "comingSoon": true
+    },
+    {
+      "slug": "linux-modo-quiosco",
+      "type": "blog",
+      "title": "Linux en modo quiosco, sin escapatoria",
+      "excerpt": "Una sesión que solo abre tu aplicación, se recupera sola si se cierra y no deja llegar al escritorio.",
+      "cover": "tutorial-2",
+      "rating": 4.5,
+      "minutes": 9,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El quiosco arranca directo en la app, oculta el cursor y vuelve a abrirla si el proceso muere. El escritorio deja de ser una puerta de salida."
+        }
+      ],
+      "published": "2026-02-04"
+    },
+    {
+      "slug": "microfono-que-traduce",
+      "type": "video",
+      "title": "Un micrófono que traduce al hablar",
+      "excerpt": "Captura la voz, la transcribe y devuelve la otra lengua en el mismo dispositivo, con una latencia que no rompe la conversación.",
+      "cover": "tutorial-4",
+      "poster": "video",
+      "rating": 5,
+      "minutes": 13,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El audio entra por el micrófono, se corta en frases y sale como texto traducido. El truco está en no esperar a que la persona termine el párrafo entero."
+        }
+      ],
+      "published": "2026-01-09"
+    },
+    {
+      "slug": "videollamada-con-notas-y-tareas",
+      "type": "video",
+      "title": "Videollamada con notas, traducción y tareas",
+      "excerpt": "Una llamada WebRTC en la que la IA toma notas, traduce en vivo y deja la lista de pendientes lista al colgar.",
+      "cover": "tutorial-1",
+      "poster": "video",
+      "rating": 5,
+      "minutes": 18,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "La sala conecta a las dos personas, transcribe lo que se dice y separa acuerdos de charla. Al terminar, las tareas ya tienen dueño."
+        }
+      ],
+      "published": "2025-12-12"
+    },
+    {
+      "slug": "teclado-abierto-que-controla-todo",
+      "type": "blog",
+      "title": "Un teclado abierto que controla la TV, la computadora y cada atajo",
+      "excerpt": "Una capa de atajos para el escritorio, la televisión y el resto de la casa. Abierto, configurable y cien por ciento open source. Cada tecla puede lanzar una escena, una app o un comando, y el mapa se versiona contigo.",
+      "cover": "tutorial-2",
+      "rating": 4.5,
+      "minutes": 12,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El teclado deja de ser solo entrada de texto. Una tecla cambia la entrada de la TV, otra abre el editor y otra apaga las luces. El mapa vive en un archivo que puedes compartir."
+        }
+      ],
+      "published": "2025-11-20"
+    },
+    {
+      "slug": "tu-video-on-demand",
+      "type": "blog",
+      "title": "Monta tu propio video on demand",
+      "excerpt": "Catálogo, reproducción y acceso controlado para publicar tus videos sin depender de una plataforma ajena.",
+      "cover": "tutorial-3",
+      "rating": 4,
+      "minutes": 15,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El catálogo lista lo que ya está codificado, el reproductor pide la pieza y el acceso decide quién puede verla. Nada de subir el archivo a un sitio que no controlas."
+        }
+      ],
+      "published": "2025-11-03"
+    },
+    {
+      "slug": "streaming-en-vivo-con-nginx",
+      "type": "video",
+      "title": "Streaming en vivo con NGINX",
+      "excerpt": "De la cámara al navegador: NGINX recibe el video, lo reparte y el reproductor lo muestra sin un servicio de por medio.",
+      "cover": "tutorial-4",
+      "poster": "video",
+      "rating": 4.5,
+      "minutes": 16,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "La emisión entra a NGINX, se parte en segmentos y el navegador los pide en orden. El servidor que ya usas para la web también puede ser el de la transmisión."
+        }
+      ],
+      "published": "2025-10-16"
+    },
+    {
+      "slug": "escaner-3d-por-triangulacion",
+      "type": "video",
+      "title": "Escáner 3D por triangulación, de la placa al software",
+      "excerpt": "Cómo se arma el hardware, se lanza el láser y el software convierte cada barrido en una nube de puntos.",
+      "cover": "tutorial-1",
+      "poster": "video",
+      "rating": 4.5,
+      "minutes": 18,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Una línea láser cruza el objeto, la cámara ve el desplazamiento y el software calcula la profundidad. El video recorre la construcción de la estructura, la electrónica y el programa que une los cortes."
+        }
+      ],
+      "published": "2025-10-02"
+    },
+    {
+      "slug": "escaner-3d-por-fotometria",
+      "type": "blog",
+      "title": "Escáner 3D por fotometría",
+      "excerpt": "Varias luces, las mismas fotos y una superficie que aparece por el brillo. Sin tocar el objeto.",
+      "cover": "tutorial-2",
+      "rating": 4.5,
+      "minutes": 11,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "Se ilumina la pieza desde distintos ángulos y se comparan las fotos. El brillo de cada punto dice hacia dónde mira la superficie, y con eso se reconstruye la forma."
+        }
+      ],
+      "published": "2025-09-18"
+    },
+    {
+      "slug": "kicad-conectado-a-un-llm",
+      "type": "video",
+      "title": "Un plugin de KiCad que habla con la IA",
+      "excerpt": "Desde el esquemático, el plugin consulta un modelo de lenguaje para revisar el circuito, proponer partes y explicar la red.",
+      "cover": "tutorial-3",
+      "poster": "video",
+      "rating": 5,
+      "minutes": 14,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "El plugin vive dentro de KiCad, lee el diseño abierto y manda el contexto a un LLM. La respuesta vuelve al editor: una sugerencia de componente, un aviso o una explicación de la conexión."
+        }
+      ],
+      "published": "2025-09-04"
+    },
+    {
+      "slug": "personal-time-manager",
+      "type": "blog",
+      "title": "Personal Time Manager, una app para tu día",
+      "excerpt": "Bloques de tiempo, tareas y un día que cabe en la pantalla. Para ver en qué se fue la hora, no solo la lista de pendientes.",
+      "cover": "tutorial-4",
+      "rating": 4,
+      "minutes": 8,
+      "comingSoon": true,
+      "sections": [
+        {
+          "heading": "Tema 01",
+          "body": "La app parte el día en bloques, deja mover una tarea de un hueco a otro y muestra cuánto tiempo real consumió cada cosa. El objetivo es cerrar el día sabiendo qué ocurrió."
+        }
+      ],
+      "published": "2025-08-21"
     }
   ],
   "sorts": [
@@ -175,5 +585,6 @@
       "id": "recientes",
       "label": "Más recientes"
     }
-  ]
+  ],
+  "comingSoonLabel": "Coming soon"
 }

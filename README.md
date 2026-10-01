@@ -1,16 +1,41 @@
-# React + Vite
+<a href="https://krisskira.github.io/personal-landing-page/">
+  <img src="public/brand/og-cover.png" alt="Kriver Devices, technology solutions" width="100%" />
+</a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Kriver Devices
 
-Currently, two official plugins are available:
+A studio for mobile apps, websites and connected-home systems, from the idea through production. Based in Colombia, working remotely.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Site](https://krisskira.github.io/personal-landing-page/) · [LinkedIn](https://www.linkedin.com/in/cristian-david-vergara-gomez/) · [Email](mailto:krisskira@gmail.com) · [Leer en español](README.es.md)
 
-## React Compiler
+## What I build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Mobile apps** for iOS, Android and cross-platform, so the product can reach people without a platform wall.
+- **Websites and web applications**, full stack, from the interface to the data.
+- **Hardware and IoT** with ESP32, STM32 and embedded Linux, when the problem starts at the device.
 
-## Expanding the ESLint configuration
+The site also holds tutorials, project write-ups and a short page about how I got here.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## On the site
+
+- **Home** — services, a sample of tutorials and a contact form.
+- **Tutorials** — videos and posts, filterable by type.
+- **Projects** — selected work, each with its own page.
+- **About** — the path from firmware to the products I work on now.
+- **Payments** — a private page, left out of the search index.
+
+## Run it
+
+React, TypeScript and Vite.
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+Copy `.env` and set `VITE_SITE_URL` to the public URL. Content lives in `src/content/`. English strings are in `src/i18n/en.json`: the key is the Spanish text, exact.
+
+The site publishes from `.github/workflows/pages.yml` on every push to `main` that touches the app. In the repository: **Settings → Pages → Source: GitHub Actions**. The current URL is <https://krisskira.github.io/personal-landing-page/>.
+
+Author: **Crhistian David Vergara Gómez** · **krisskira@gmail.com**

@@ -1,7 +1,79 @@
 {
   "title": "Proyectos personales",
-  "lead": "Trabajos del laboratorio. El texto vive en este JSON: cuando exista backend, la misma ruta devolverá la lista.",
+  "lead": "Lo que construyo en el laboratorio: hardware, firmware, plataformas y apps que nacen de una necesidad real y se publican abiertas.",
   "items": [
+    {
+      "slug": "hotplate-smd",
+      "schema": {
+        "@type": "SoftwareSourceCode",
+        "codeRepository": "https://github.com/krisskira/smd-soldering-hotplate",
+        "programmingLanguage": ["C", "Python"],
+        "runtimePlatform": "ATmega16"
+      },
+      "title": "HotPlate, estación de reflow SMD",
+      "year": "2026",
+      "role": "Firmware, hardware y escritorio",
+      "tags": [
+        "ATmega16",
+        "PT100",
+        "PI"
+      ],
+      "summary": "Placa calefactora que ejecuta un Soldering Profile de hasta cuatro escalones, con control PI predictivo y una aplicación de escritorio.",
+      "cover": "posts/hotplate/hotplate-demo-poster.jpg",
+      "sections": [
+        {
+          "heading": "Para qué existe",
+          "body": "Soldar SMD con cautín se acaba cuando aparece un QFN. HotPlate funde la pasta con una curva: espera, sube, sostiene cada meseta y se apaga. La pasta no depende de alguien mirando el termómetro."
+        },
+        {
+          "heading": "Qué incluye",
+          "body": [
+            "El cerebro es un ATmega16 a 8 MHz. Mide con un PT100 y un MAX31865, y conmuta dos resistencias PTC mediante un relé de estado sólido (MOC3021 + BT136). La cara local es HotPanel, una ST7920 de 128×64 y un encoder.",
+            "HotPlate Studio, en el computador, habla por USB a 19200 baudios: edita el perfil, lanza el ciclo o el autoajuste, dibuja la curva y exporta CSV. El mismo protocolo AT sirve para un script. El firmware cabe justo: 16 382 de 16 384 bytes de flash."
+          ]
+        },
+        {
+          "heading": "Dónde seguir",
+          "body": "El relato del ciclo, las trazas y el autoajuste están en el tutorial [HotPlate: reflow SMD sin horno](https://krisskira.github.io/personal-landing-page/tutoriales/hotplate-reflow-smd). El código, la PCB en KiCad y la carcasa están en el [repositorio](https://github.com/krisskira/smd-soldering-hotplate). Trabaja con red eléctrica: bajo tu responsabilidad."
+        }
+      ]
+    },
+    {
+      "slug": "klog",
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, Docker",
+        "softwareRequirements": "PostgreSQL, Redis"
+      },
+      "title": "kLog, logs en tu servidor",
+      "year": "2026",
+      "role": "Plataforma",
+      "tags": [
+        "Go",
+        "Postgres",
+        "GraphQL"
+      ],
+      "summary": "Plataforma self-hosted para ingerir eventos de aplicaciones e IoT, guardarlos por tenant y consultarlos desde una consola.",
+      "cover": "tutorial-3",
+      "sections": [
+        {
+          "heading": "Para qué existe",
+          "body": "kLog captura logs y eventos sin entregarlos a un tercero. La propuesta es soberanía de datos y un costo predecible frente a un servicio de observabilidad alojado, con una aplicación propia en lugar de un ensamble de Grafana."
+        },
+        {
+          "heading": "Qué incluye",
+          "body": [
+            "La API en Go separa el trabajo: REST para `POST /v1/ingest/{tenantId}/events` y para health; GraphQL para usuarios, tenants, permisos y consulta. Postgres parte el plano de control y un schema por tenant. Redis lleva la cola que consume el worker.",
+            "El acceso distingue personas y dispositivos. La sesión es una cookie HttpOnly o un JWT; el dispositivo usa un API token de proyecto que solo puede escribir en sus aplicaciones. El identificador público es un UUIDv7."
+          ]
+        },
+        {
+          "heading": "Dónde seguir",
+          "body": "El recorrido de la ingesta, el token y la búsqueda prevista está en el tutorial [kLog: los logs se quedan en tu servidor](https://krisskira.github.io/personal-landing-page/tutoriales/klog-registros-que-se-buscan)."
+        }
+      ]
+    },
     {
       "slug": "fabricacion-cnc",
       "title": "Fabricación de máquinas",

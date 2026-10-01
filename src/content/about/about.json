@@ -1,0 +1,150 @@
+{
+  "title": { "es": "Sobre mí", "en": "About me" },
+  "name": "Crhistian David Vergara Gómez",
+  "alternateName": "Cristian David Vergara Gómez",
+  "photo": "about/profile-3d.webp",
+  "role": { "es": "Desarrollador full stack y móvil", "en": "Full-stack and mobile developer" },
+  "location": "Palmira, Valle del Cauca, Colombia",
+  "since": "2016-12",
+  "summary": {
+    "es": "Más de diez años construyendo software de punta a punta: backends en Node.js, TypeScript, Python y Go; interfaces en React y Angular; apps nativas y multiplataforma con Swift, React Native y Flutter; y la infraestructura que las sostiene en AWS, GCP, Docker y Linux.",
+    "en": "Over ten years building software end to end: backends in Node.js, TypeScript, Python and Go; interfaces in React and Angular; native and cross-platform apps with Swift, React Native and Flutter; and the infrastructure behind them on AWS, GCP, Docker and Linux."
+  },
+  "story": [
+    {
+      "es": "Me mueve la curiosidad: entender cómo funcionan las cosas y construirlas yo mismo. Esa mezcla de hardware y software sigue siendo lo que más disfruto, ver el problema completo desde el sensor hasta la pantalla del usuario.",
+      "en": "Curiosity drives me: understanding how things work and building them myself. That mix of hardware and software is still what I enjoy most, seeing the whole problem from the sensor to the user's screen."
+    },
+    {
+      "es": "Con los años me especialicé en apps móviles y aplicaciones web full stack, trabajando en equipos distribuidos, liderando frontend y coordinando entregas. Hoy integro la IA en mi flujo de trabajo para resolver problemas más rápido y entregar código de mejor calidad.",
+      "en": "Over the years I specialized in mobile apps and full-stack web applications, working in distributed teams, leading frontend work and coordinating deliveries. Today I bring AI into my workflow to solve problems faster and ship better code."
+    },
+    {
+      "es": "En **Kriver Devices** publico lo que construyo en el laboratorio: placas, firmware, plataformas self-hosted y tutoriales para que otros puedan replicarlo.",
+      "en": "At **Kriver Devices** I publish what I build in the lab: boards, firmware, self-hosted platforms and tutorials so others can reproduce them."
+    }
+  ],
+  "highlights": [
+    { "value": "+10", "label": { "es": "años construyendo software", "en": "years building software" } },
+    { "value": "3", "label": { "es": "frentes: web, móvil y hardware", "en": "fronts: web, mobile and hardware" } },
+    { "value": "2", "label": { "es": "idiomas de trabajo", "en": "working languages" } }
+  ],
+  "experienceTitle": { "es": "Mi camino de aprendizaje", "en": "My learning path" },
+  "experienceLead": {
+    "es": "Cada proyecto y cada equipo me dejó algo nuevo. Este es el recorrido, contado por lo que aprendí y lo que aporté en cada etapa.",
+    "en": "Every project and every team left me something new. This is the journey, told through what I learned and what I contributed at each stage."
+  },
+  "experience": [
+    {
+      "period": "2016 – 2019",
+      "title": { "es": "Los cimientos: del microcontrolador a la web", "en": "The foundations: from microcontroller to the web" },
+      "text": {
+        "es": "Empecé programando microcontroladores PIC en C, con maquetas como un semáforo y el firmware de domótica de Kriver SmartHome. En paralelo construí aplicaciones web en PHP y JavaScript y mi propio framework MVC. Ahí aprendí a entender un sistema completo, desde el circuito hasta la base de datos.",
+        "en": "I started programming PIC microcontrollers in C, with builds like a traffic light model and the Kriver SmartHome home automation firmware. In parallel I built web applications in PHP and JavaScript and my own MVC framework. That is where I learned to understand a whole system, from the circuit to the database."
+      },
+      "learned": ["C", "PIC", "PHP", "MVC", "MySQL", "JavaScript"]
+    },
+    {
+      "period": "2019 – 2023",
+      "title": { "es": "El salto al móvil y a la buena arquitectura", "en": "The jump to mobile and solid architecture" },
+      "text": {
+        "es": "La especialización en desarrollo móvil del SENA me abrió la puerta a las apps. Trabajé en productos fintech y de comercio electrónico con React Native y, para hacerlos mantenibles, adopté Clean Architecture, DDD, patrones de diseño y pruebas automatizadas. También practiqué iOS nativo con Swift y Android con Kotlin.",
+        "en": "The SENA mobile development specialization opened the door to apps. I worked on fintech and e-commerce products with React Native and, to keep them maintainable, adopted Clean Architecture, DDD, design patterns and automated testing. I also practiced native iOS with Swift and Android with Kotlin."
+      },
+      "learned": ["React Native", "Swift", "Kotlin", "Redux", "Clean Architecture", "DDD", "Cypress"]
+    },
+    {
+      "period": "2023 – 2024",
+      "title": { "es": "Rendimiento, backend y datos", "en": "Performance, backend and data" },
+      "text": {
+        "es": "Entregué una app de comercio electrónico en React Native y nuevas funciones en una app iOS nativa. Mi mayor aporte fue refactorizar las consultas MongoDB de un backend en FastAPI, con una caída grande en los tiempos de respuesta. Por mi cuenta exploré machine learning con Python: reconocimiento de dígitos manuscritos, clasificación de imágenes y modelos predictivos.",
+        "en": "I shipped an e-commerce app in React Native and new features in a native iOS app. My biggest contribution was refactoring the MongoDB queries of a FastAPI backend, with a large drop in response times. On my own I explored machine learning with Python: handwritten digit recognition, image classification and predictive models."
+      },
+      "learned": ["Python", "FastAPI", "MongoDB", "Django", "Docker", "Machine learning"]
+    },
+    {
+      "period": "2024 – 2025",
+      "title": { "es": "Liderar desde el frontend", "en": "Leading from the frontend" },
+      "text": {
+        "es": "Llegué a un gran equipo como desarrollador externo para trabajar en aplicaciones React, funciones AWS Lambda con SAM y una plantilla base para proyectos nuevos. Con el tiempo pasé a la estructura del producto principal: coordiné el frontend, repartí responsabilidades y acompañé al equipo hasta la entrega.",
+        "en": "I joined a great team as an external developer to work on React applications, AWS Lambda functions with SAM and a base template for new projects. Over time I moved into the main product's core: I coordinated the frontend, split responsibilities and supported the team through delivery."
+      },
+      "learned": ["React", "AWS Lambda", "AWS SAM", "AWS Cognito", { "es": "Liderazgo técnico", "en": "Technical leadership" }]
+    },
+    {
+      "period": "2025 – 2026",
+      "title": { "es": "Producto, SaaS e IA en el día a día", "en": "Product, SaaS and AI every day" },
+      "text": {
+        "es": "Pasé por varios productos a la vez, en frontend y backend: plataformas SaaS, backends GraphQL, bases de datos relacionales y arquitectura de aplicaciones. Adaptarme a requisitos y equipos distintos me hizo más rápido y versátil. Incorporé la IA a mi flujo de trabajo y la estudié con certificaciones en IA y en UX/UI. En el laboratorio la llevo a proyectos propios como kLog y el HotPlate.",
+        "en": "I worked across several products at once, on frontend and backend: SaaS platforms, GraphQL backends, relational databases and application architecture. Adapting to different requirements and teams made me faster and more versatile. I brought AI into my workflow and studied it through AI and UX/UI certifications. In the lab I apply it to my own projects such as kLog and the HotPlate."
+      },
+      "learned": ["GraphQL", "Go", "PostgreSQL", "LangChain", "RAG", "UX/UI"]
+    }
+  ],
+  "experienceClosing": {
+    "es": "Lo que se mantiene en todas las etapas es la actitud: llegar con ganas, poner lo que sé al servicio del equipo, aprender lo que haga falta y empujar hasta que el proyecto salga adelante.",
+    "en": "What stays the same at every stage is the attitude: show up willing, put what I know at the team's service, learn whatever is needed and push until the project moves forward."
+  },
+  "learnedLabel": { "es": "Lo que aprendí", "en": "What I learned" },
+  "skillsTitle": { "es": "Conocimientos", "en": "Skills" },
+  "skills": [
+    { "name": { "es": "Móvil", "en": "Mobile" }, "items": ["iOS Swift", "SwiftUI", "React Native", "Flutter", "Kotlin"] },
+    { "name": "Frontend", "items": ["React", "Angular", "TypeScript", "Redux", "Vite", "Tailwind CSS"] },
+    { "name": "Backend", "items": ["Node.js", "NestJS", "Python", "FastAPI", "Django", "Go", "GraphQL"] },
+    { "name": { "es": "Datos", "en": "Data" }, "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis"] },
+    { "name": "Cloud & DevOps", "items": ["AWS Lambda", "AWS SAM", "AWS Cognito", "GCP", "DigitalOcean", "Docker", "NGINX", "Linux"] },
+    { "name": { "es": "IA", "en": "AI" }, "items": ["LangChain", "RAG", "OpenAI", "Llama"] },
+    { "name": { "es": "Hardware", "en": "Hardware" }, "items": ["C", "AVR", "ESP32", "STM32", "PIC", "KiCad"] },
+    { "name": { "es": "Prácticas", "en": "Practices" }, "items": ["Clean Architecture", "DDD", "MVVM", "Atomic Design", "Cypress"] }
+  ],
+  "educationTitle": { "es": "Formación", "en": "Education" },
+  "education": [
+    {
+      "name": { "es": "Tecnología en Desarrollo de Software", "en": "Technology degree in Software Development" },
+      "org": "Corporación Universitaria Centro Superior UNICUCES",
+      "period": "2022 – 2025"
+    },
+    {
+      "name": {
+        "es": "Especialización Tecnológica en Desarrollo de Aplicaciones Móviles",
+        "en": "Technological specialization in Mobile Application Development"
+      },
+      "org": "Servicio Nacional de Aprendizaje SENA",
+      "period": "2019"
+    }
+  ],
+  "certificationsTitle": { "es": "Certificaciones", "en": "Certifications" },
+  "certifications": [
+    { "name": { "es": "Diseño de experiencias UX/UI", "en": "UX/UI experience design" }, "issuer": "UPB · Insignias Medellín", "date": "2025-12" },
+    { "name": { "es": "Inteligencia Artificial", "en": "Artificial Intelligence" }, "issuer": "Talento Tech 2.0", "date": "2025-03" },
+    { "name": { "es": "Desarrollo de aplicaciones con SwiftUI", "en": "App development with SwiftUI" }, "issuer": "Platzi", "date": "2025-01" },
+    { "name": "EF SET English Certificate 61/100 (C1 Advanced)", "issuer": "EF Standard English Test", "date": "2023-05" }
+  ],
+  "languagesTitle": { "es": "Idiomas", "en": "Languages" },
+  "languages": [
+    { "name": { "es": "Español", "en": "Spanish" }, "level": { "es": "Nativo", "en": "Native" }, "code": "es" },
+    { "name": { "es": "Inglés", "en": "English" }, "level": { "es": "B1+ · EF SET C1", "en": "B1+ · EF SET C1" }, "code": "en" }
+  ],
+  "quotesTitle": { "es": "Lo que dicen quienes han trabajado conmigo", "en": "What colleagues say" },
+  "quotes": [
+    {
+      "text": {
+        "es": "Demostró una y otra vez la capacidad de guiar y motivar al equipo. Entiende conceptos complejos rápido y los convierte en código limpio y bien estructurado.",
+        "en": "He consistently demonstrated the ability to guide and motivate the team. He grasps complex concepts quickly and turns them into clean, well-structured code."
+      },
+      "author": "Santiago Valle"
+    },
+    {
+      "text": {
+        "es": "Una excelente persona y un estupendo programador, con gran conocimiento y siempre dispuesto a ayudar y a compartir lo que sabe.",
+        "en": "An excellent person and a great programmer, with deep knowledge and always willing to help and share what he knows."
+      },
+      "author": "Victor Hoyos"
+    }
+  ],
+  "cta": {
+    "title": { "es": "¿Trabajamos juntos?", "en": "Shall we work together?" },
+    "label": { "es": "Escríbeme", "en": "Get in touch" },
+    "to": "/#contacto"
+  }
+}

@@ -12,8 +12,8 @@
       name="keywords"
       content="desarrollo de apps móviles, desarrollo web, full stack, IoT, ESP32, STM32, Linux embebido, React, Node.js, Kotlin, Swift, Colombia, Kriver Devices"
     />
-    <meta name="author" content="Cristian David Vergara Gómez" />
-    <meta name="creator" content="Cristian David Vergara Gómez" />
+    <meta name="author" content="Crhistian David Vergara Gómez" />
+    <meta name="creator" content="Crhistian David Vergara Gómez" />
     <meta name="publisher" content="Kriver Devices" />
     <meta name="application-name" content="Kriver Devices" />
     <meta name="apple-mobile-web-app-title" content="Kriver" />
@@ -30,7 +30,12 @@
 
     <link rel="canonical" href="%SITE_URL%/" />
     <link rel="alternate" hreflang="es-CO" href="%SITE_URL%/" />
+    <link rel="alternate" hreflang="en" href="%SITE_URL%/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="%SITE_URL%/" />
+    <link rel="me" href="https://github.com/krisskira" />
+    <link rel="me" href="https://www.facebook.com/krisskira" />
+    <link rel="me" href="https://orcid.org/0009-0005-0802-7042" />
+    <link rel="me" href="https://www.linkedin.com/in/cristian-david-vergara-gomez/" />
     <link rel="sitemap" type="application/xml" href="%SITE_URL%/sitemap.xml" />
     <link rel="icon" type="image/svg+xml" href="./brand/logo.svg" />
     <link rel="apple-touch-icon" href="./brand/icon-192.png" />
@@ -88,20 +93,35 @@
             "founder": { "@id": "%SITE_URL%/#person" },
             "sameAs": [
               "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
-              "https://github.com/krisskira"
+              "https://github.com/krisskira",
+              "https://www.facebook.com/krisskira",
+              "https://orcid.org/0009-0005-0802-7042"
             ]
           },
           {
             "@type": "Person",
             "@id": "%SITE_URL%/#person",
-            "name": "Cristian David Vergara Gómez",
+            "name": "Crhistian David Vergara Gómez",
+            "alternateName": "Cristian David Vergara Gómez",
+            "url": "%SITE_URL%/sobre-mi",
+            "image": "%SITE_URL%/about/profile.jpg",
             "email": "krisskira@gmail.com",
             "telephone": "+573183919187",
-            "jobTitle": "Desarrollador e ingeniero",
+            "jobTitle": "Desarrollador full stack y móvil",
+            "description": "Más de diez años construyendo software web, móvil e IoT con Node.js, TypeScript, Python, Go, React, Swift y React Native.",
+            "address": { "@type": "PostalAddress", "addressLocality": "Palmira", "addressRegion": "Valle del Cauca", "addressCountry": "CO" },
+            "knowsLanguage": ["es", "en"],
+            "knowsAbout": ["React", "React Native", "Swift", "Node.js", "TypeScript", "Python", "Go", "AWS", "Docker", "PostgreSQL", "MongoDB", "LangChain", "IoT"],
+            "alumniOf": [
+              { "@type": "EducationalOrganization", "name": "Corporación Universitaria Centro Superior UNICUCES" },
+              { "@type": "EducationalOrganization", "name": "Servicio Nacional de Aprendizaje SENA" }
+            ],
             "worksFor": { "@id": "%SITE_URL%/#business" },
             "sameAs": [
               "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
-              "https://github.com/krisskira"
+              "https://github.com/krisskira",
+              "https://www.facebook.com/krisskira",
+              "https://orcid.org/0009-0005-0802-7042"
             ]
           }
         ]
@@ -116,6 +136,18 @@
     <script>
       (function () {
         try {
+          var lang = new URLSearchParams(location.search).get('lang');
+          var savedLang = localStorage.getItem('kriver-locale');
+          var locale = lang === 'en' || lang === 'es' ? lang : savedLang === 'en' || savedLang === 'es' ? savedLang : '';
+          if (!locale) {
+            var preferred = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+            for (var i = 0; i < preferred.length && !locale; i++) {
+              var code = String(preferred[i] || '').toLowerCase().slice(0, 2);
+              if (code === 'en' || code === 'es') locale = code;
+            }
+            locale = locale || 'es';
+          }
+          document.documentElement.lang = locale === 'en' ? 'en' : 'es-CO';
           var stored = localStorage.getItem('kriver-theme');
           var dark =
             stored === 'dark' ||
@@ -138,12 +170,13 @@
         <ul>
           <li><a href="./tutoriales">Tutoriales y blog</a></li>
           <li><a href="./proyectos">Proyectos</a></li>
+          <li><a href="./sobre-mi">Sobre mí</a></li>
           <li><a href="mailto:krisskira@gmail.com">krisskira@gmail.com</a></li>
           <li><a href="https://wa.me/573183919187">WhatsApp +57 318 391 9187</a></li>
         </ul>
         <p>Activa JavaScript para ver el sitio completo.</p>
       </main>
     </noscript>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
