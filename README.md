@@ -22,7 +22,6 @@ The site also holds tutorials, project write-ups and a short page about how I go
 - **Tutorials** — videos and posts, filterable by type.
 - **Projects** — selected work, each with its own page.
 - **About** — the path from firmware to the products I work on now.
-- **Payments** — a private page, left out of the search index.
 
 ## Run it
 

@@ -1,6 +1,5 @@
 # Este archivo se regenera durante `npm run build`.
 User-agent: *
 Allow: /
-Disallow: /personal-landing-page/pagos
 
 Sitemap: https://krisskira.github.io/personal-landing-page/sitemap.xml

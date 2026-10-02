@@ -37,9 +37,7 @@ export function SiteHeader() {
   const open = menu.key === locationKey && menu.open;
   const setOpen = (value: any) => setMenu({ key: locationKey, open: value });
   const nav = site.data?.nav ?? [];
-  const payments = site.data?.payments;
   const coffee = site.data?.coffee;
-  const onTutorials = location.pathname.startsWith('/tutoriales');
   const [atTop, setAtTop] = useState(true);
   const home = useContent<HomeContent>('/home/home');
   const overlay = location.pathname === '/' && home.isSuccess && atTop && !open;
@@ -89,36 +87,36 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          {payments ? (
-            <span className="flex items-center gap-4">
-              <Link
-                to={payments.to}
-                className={`inline-flex h-[41px] w-[120px] items-center justify-center rounded-[20px] bg-action font-noto text-lg font-semibold text-white transition hover:brightness-95 ${focusRing}`}
+          <span className="flex items-center gap-4">
+            {coffee ? (
+              <a
+                href={coffee.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('footer.newTab', { label: coffee.label })}
+                className={`inline-flex h-[41px] items-center gap-2 rounded-[20px] bg-action px-5 font-noto text-base font-semibold text-white transition hover:brightness-95 ${focusRing}`}
               >
-                {payments.label}
-              </Link>
-              <LocaleSwitch overlay={overlay} />
-              {themeButton}
-            </span>
-          ) : null}
+                {coffee.label}
+                <img src={media.paypal} alt="" aria-hidden="true" className="h-6 w-6 brightness-0 invert" />
+              </a>
+            ) : null}
+            <LocaleSwitch overlay={overlay} />
+            {themeButton}
+          </span>
         </nav>
 
         <div className="flex items-center gap-3 lg:hidden">
-          {onTutorials && coffee ? (
+          {coffee ? (
             <a
               href={coffee.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('footer.newTab', { label: coffee.label })}
               className={`inline-flex h-[30px] items-center gap-3 rounded-[20px] bg-action pl-[13px] pr-[13px] font-display text-[10px] font-medium text-white ${focusRing}`}
             >
               {coffee.label}
               <img src={media.paypal} alt="" aria-hidden="true" className="h-6 w-6 brightness-0 invert" />
             </a>
-          ) : payments ? (
-            <Link
-              to={payments.to}
-              className={`inline-flex h-[33px] w-[112px] items-center justify-center rounded-[20px] bg-action font-noto text-sm font-semibold text-white ${focusRing}`}
-            >
-              {payments.label}
-            </Link>
           ) : null}
           <LocaleSwitch overlay={overlay} />
           {themeButton}

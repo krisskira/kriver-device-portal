@@ -11,8 +11,6 @@ const STATIC_ROUTES = [
   { path: '/sobre-mi', changefreq: 'monthly', priority: '0.7' },
 ];
 
-const PRIVATE_ROUTES = ['/pagos'];
-
 function readJson(root: string, file: string): { items: Item[] } {
   return JSON.parse(readFileSync(resolve(root, 'src/content', file), 'utf8'));
 }
@@ -69,11 +67,8 @@ ${urls}
 }
 
 export function robots(siteUrl: string) {
-  const basePath = new URL(siteUrl).pathname.replace(/\/$/, '');
-
   return `User-agent: *
 Allow: /
-${PRIVATE_ROUTES.map((route: any) => `Disallow: ${basePath}${route}`).join('\n')}
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;

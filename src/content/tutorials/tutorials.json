@@ -319,7 +319,7 @@
         },
         {
           "heading": "Tema 02",
-          "body": "Se anota qué quedó simulado. En esta landing, por ejemplo, el contacto y el pago confirman en el navegador. Esa frontera tiene que verse, no esconderse."
+          "body": "Se anota qué quedó simulado. En esta landing, por ejemplo, el formulario de contacto confirma en el navegador. Esa frontera tiene que verse, no esconderse."
         }
       ],
       "published": "2026-05-21",
@@ -542,21 +542,112 @@
     },
     {
       "slug": "kicad-conectado-a-un-llm",
-      "type": "video",
+      "type": "blog",
+      "tags": ["KiCad", "IA", "Python", "EDA", "PCB", "FreeRouting"],
       "title": "Un plugin de KiCad que habla con la IA",
-      "excerpt": "Desde el esquemático, el plugin consulta un modelo de lenguaje para revisar el circuito, proponer partes y explicar la red.",
-      "cover": "tutorial-3",
-      "poster": "video",
+      "excerpt": "KiCad IA: describes el circuito en un chat y el esquemático sale con las piezas y huellas de tus propias bibliotecas. Sin inventar componentes y sin romper lo que ya está en la placa.",
+      "cover": "posts/kicad-ia/cover.png",
       "rating": 5,
-      "minutes": 14,
-      "comingSoon": true,
+      "minutes": 7,
+      "published": "2026-10-01",
       "sections": [
         {
-          "heading": "Tema 01",
-          "body": "El plugin vive dentro de KiCad, lee el diseño abierto y manda el contexto a un LLM. La respuesta vuelve al editor: una sugerencia de componente, un aviso o una explicación de la conexión."
+          "heading": "Dibujar lo obvio cansa",
+          "body": [
+            "Un LED con su resistencia, un regulador con sus condensadores, un conector USB-C con su protección. Son bloques que se dibujan una y otra vez, y cada vez toca buscar el símbolo, asignar la huella y cablear las redes a mano.",
+            "**KiCad IA** es un plugin para KiCad 10 que cambia esa parte: le describes el circuito en un chat y escribe el esquemático del proyecto abierto. Las piezas salen de las bibliotecas que ya tienes configuradas, no de un catálogo aparte."
+          ]
+        },
+        {
+          "heading": "Del botón a la placa",
+          "body": "En el editor de PCB aparece el botón **KiCad IA**. Al pulsarlo se abre el chat en el navegador, en `http://127.0.0.1:8765`. El recorrido completo:",
+          "list": [
+            "Eliges el modelo en Ajustes: Google Gemini, Ollama local, OpenAI o cualquier URL compatible con OpenAI.",
+            "Describes el circuito, o pulsas el **＋** del campo de texto para una acción rápida.",
+            "Cierras el editor de esquemáticos y el chat escribe el `.kicad_sch`, con una copia en `.kicad-ia-backup/`.",
+            "En KiCad pasas a la placa con **F8**: Herramientas → Actualizar PCB desde el esquemático.",
+            "Si quieres, pides organizar, colocar o autorutear. Colocar y autorutear muestran la propuesta y se aplican cuando confirmas."
+          ],
+          "image": {
+            "src": "posts/kicad-ia/flujo.svg",
+            "width": 1200,
+            "height": 560,
+            "alt": "Diagrama de bloques: editor de PCB, chat, bibliotecas, esquemático, F8, y luego organizar, colocar o autorutear",
+            "caption": "Colocar y autorutear no tocan la placa hasta que confirmas."
+          }
+        },
+        {
+          "heading": "Las piezas salen de tus bibliotecas",
+          "body": [
+            "El chat busca símbolos y huellas en `sym-lib-table` y `fp-lib-table`, las mismas tablas que ves en KiCad. Si una pieza no está, no dibuja otra en su lugar ni inventa un número de parte.",
+            "Antes de colocar nada, el chat fija por escrito lo que pediste: componentes obligatorios, prohibidos y restricciones. Si una restricción no se puede comprobar con lo que dice la biblioteca, queda como desconocida y te pregunta. Un sustituto nunca entra en silencio: o lo apruebas, o no se usa."
+          ]
+        },
+        {
+          "heading": "Ningún componente sin huella",
+          "body": [
+            "Un detalle fácil de pasar por alto: en las bibliotecas de KiCad, `Device:R`, `Device:C` o `Device:LED` no traen huella. Si el esquemático se escribe así, F8 deja la pieza fuera de la PCB.",
+            "Ahora la selección revisa la huella de cada componente. Si el símbolo no la trae, propone las de tu biblioteca que encajan con su filtro y tienen el mismo número de pads que pines. Si hay varias, te pregunta. Y el escritor del esquemático tiene un último seguro: un componente sin huella no se escribe. Los símbolos de alimentación, como `GND`, no la necesitan."
+          ]
+        },
+        {
+          "heading": "Lo que ya está no se rehace",
+          "body": [
+            "Cada símbolo del esquemático tiene un identificador, y la huella de la placa guarda ese mismo id. Si el chat borrara y volviera a dibujar el símbolo, la placa perdería el enlace: F8 vería una pieza nueva y otra sobrante.",
+            "Por eso, antes de escribir, el chat mira el esquemático y la placa. Una referencia que ya existe con el mismo símbolo se conserva con su id y su posición; solo se añaden las piezas nuevas. Si la referencia es la misma pero el símbolo es otro, no lo sustituye: avisa. Y si esas referencias ya están en la placa, se niega a rehacer la hoja entera."
+          ]
+        },
+        {
+          "heading": "El esquemático se escribe en el archivo",
+          "body": "KiCad 10 tiene API para la placa, pero no para el esquemático. El plugin edita el `.kicad_sch` directamente y, si el editor de esquemáticos tiene ese archivo abierto, no lo toca: te pide cerrarlo. Por la misma razón, pasar a la placa sigue siendo tu **F8**; el plugin no importa la netlist por su cuenta."
+        },
+        {
+          "heading": "Colocar y autorutear, con confirmación",
+          "body": [
+            "En la placa, el chat puede organizar los componentes por funciones, proponer una colocación y validar. Cuando la placa no tiene contorno, te dice qué área usar o te pide definirlo en `Edge.Cuts`, en vez de adivinarlo.",
+            "El autoruteo usa FreeRouting 2.0.1 con Java 17 o posterior, y nace apagado. Lo activas en Ajustes junto con los mínimos de fabricación: ancho de pista, clearance, vía, taladro y agujero. El informe de colocación es un prechequeo IPC Clase 2, no una certificación."
+          ]
+        },
+        {
+          "heading": "El chat",
+          "body": "La barra de arriba dice si KiCad responde, qué modelo está elegido y cuántos tokens van; si el proveedor no informa el consumo, muestra una estimación con `~`. A la izquierda quedan el proyecto, la selección del editor de PCB y tus conversaciones: cada una se guarda en tu equipo, sin la API key, y solo vale para ese proyecto: se lee como resumen y no se puede continuar.",
+          "gallery": [
+            {
+              "src": "posts/kicad-ia/chat-inicio.png",
+              "alt": "Chat de KiCad IA conectado a KiCad 10.0.1, con el proyecto abierto y tres conversaciones guardadas",
+              "caption": "Inicio, con KiCad conectado.",
+              "width": 1280,
+              "height": 1120
+            },
+            {
+              "src": "posts/kicad-ia/chat-acciones.png",
+              "alt": "Menú de acciones rápidas abierto encima del campo de texto del chat",
+              "caption": "El **＋** abre las acciones rápidas.",
+              "width": 1280,
+              "height": 1120
+            },
+            {
+              "src": "posts/kicad-ia/chat-ajustes.png",
+              "alt": "Ajustes con Google Gemini, la API key vacía, Java detectado y el autoruteo activado",
+              "caption": "Modelo, Java y autoruteo.",
+              "width": 1100,
+              "height": 1053
+            }
+          ]
+        },
+        {
+          "heading": "Instalarlo",
+          "body": "Hace falta KiCad 10. Hay cuatro vías: el gestor de complementos de KiCad con el índice del repositorio, un script para macOS y Linux, otro para Windows, o el zip de la release. Todas dejan el plugin en `Documentos/KiCad/<versión>/plugins/kicad-ia`.",
+          "code": "curl -fsSL https://raw.githubusercontent.com/krisskira/kicad-ia-chat/main/install/install.sh | sh"
+        },
+        {
+          "heading": "Dónde seguir",
+          "body": [
+            "El paso a paso, los Ajustes y las preguntas frecuentes están en la [página del proyecto](https://krisskira.github.io/kicad-ia-chat/). El código está en el [repositorio](https://github.com/krisskira/kicad-ia-chat).",
+            "Si trabajas con Cursor u otro asistente, el mismo trabajo está disponible como servidor MCP; la configuración está en la guía del repositorio."
+          ]
         }
-      ],
-      "published": "2025-09-04"
+      ]
     },
     {
       "slug": "personal-time-manager",

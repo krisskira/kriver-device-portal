@@ -23,7 +23,7 @@ export function SiteFooter() {
   const data = site.data;
   const footer = (data?.footer ?? {}) as Partial<SiteContent['footer']>;
   const year = new Date().getFullYear();
-  const nav = [...(data?.nav ?? []), data?.about, data?.payments].filter(Boolean);
+  const nav = [...(data?.nav ?? []), data?.about].filter(Boolean);
 
   const contacts = [
     data?.email && { icon: Mail, label: data.email, href: `mailto:${data.email}` },

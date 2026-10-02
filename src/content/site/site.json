@@ -19,9 +19,8 @@
     { "label": "Proyectos", "to": "/proyectos" }
   ],
   "cta": { "label": "Contáctanos", "to": "/#contacto" },
-  "payments": { "label": "Pagos", "to": "/pagos" },
   "about": { "label": "Sobre mí", "to": "/sobre-mi" },
-  "coffee": { "label": "Invitame un café", "href": "/pagos" },
+  "coffee": { "label": "Invitame un café", "href": "https://paypal.me/KRIVERDEVICE?locale.x=es_XC&country.x=CO" },
   "social": [
     {
       "label": "LinkedIn",

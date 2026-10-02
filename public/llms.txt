@@ -30,9 +30,12 @@ soluciones IoT y prototipos, además de proyectos personales y tutoriales.
 - [HotPlate: reflow SMD sin horno](/tutoriales/hotplate-reflow-smd): placa calefactora abierta con ATmega16, Soldering Profile de cuatro escalones, control PI predictivo, autoajuste y la app de escritorio HotPlate Studio. Incluye video de un ciclo real. Página del proyecto: https://krisskira.github.io/smd-soldering-hotplate/
 - [kLog: los logs se quedan en tu servidor](/tutoriales/klog-registros-que-se-buscan): plataforma self-hosted para capturar, guardar y consultar eventos de aplicaciones e IoT, con ingesta REST, gestión en GraphQL, Postgres y Redis.
 
+- [Un plugin de KiCad que habla con la IA](/tutoriales/kicad-conectado-a-un-llm): KiCad IA, plugin para KiCad 10 que arma el esquemático desde un chat con las piezas y huellas de las bibliotecas configuradas, conserva lo que ya está en la placa y propone colocación y autoruteo con confirmación. Página del proyecto: https://krisskira.github.io/kicad-ia-chat/
+
 ## Proyectos
 
 - [HotPlate, estación de reflow SMD](/proyectos/hotplate-smd)
+- [KiCad IA, el esquemático desde un chat](/proyectos/kicad-ia)
 - [kLog, logs en tu servidor](/proyectos/klog)
 
 ## Contacto

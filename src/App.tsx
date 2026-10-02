@@ -13,7 +13,6 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { ProjectPage } from './pages/ProjectPage';
 import { TutorialsPage } from './pages/TutorialsPage';
 import { PostPage } from './pages/PostPage';
-import { PaymentPage } from './pages/PaymentPage';
 import { AboutPage } from './pages/AboutPage';
 
 function basename() {
@@ -49,7 +48,6 @@ export default function App() {
                 <Route path="/proyectos/:slug" element={<ProjectPage />} />
                 <Route path="/tutoriales" element={<TutorialsPage />} />
                 <Route path="/tutoriales/:slug" element={<PostPage />} />
-                <Route path="/pagos" element={<PaymentPage />} />
                 <Route path="/sobre-mi" element={<AboutPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

@@ -4,7 +4,7 @@
  * Hoy resuelve los JSON de src/content/<página>/.
  * Para usar un backend, define VITE_API_BASE (sin barra final).
  * Las rutas se mantienen: /site/site, /home/home, /projects/projects,
- * /tutorials/tutorials, /payments/payments.
+ * /tutorials/tutorials.
  */
 const modules = import.meta.glob<{ default: unknown }>('../content/**/*.json');
 

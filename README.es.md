@@ -22,7 +22,6 @@ El sitio también guarda tutoriales, fichas de proyectos y una página breve de 
 - **Tutoriales** — videos y posts, filtrables por tipo.
 - **Proyectos** — trabajos seleccionados, cada uno con su página.
 - **Sobre mí** — el recorrido del firmware a los productos en los que trabajo ahora.
-- **Pagos** — una página privada, fuera del índice de búsqueda.
 
 ## Arranque
 

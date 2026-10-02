@@ -39,6 +39,43 @@
       ]
     },
     {
+      "slug": "kicad-ia",
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Linux, Windows",
+        "softwareRequirements": "KiCad 10",
+        "sameAs": "https://github.com/krisskira/kicad-ia-chat"
+      },
+      "title": "KiCad IA, el esquemático desde un chat",
+      "year": "2026",
+      "role": "Plugin, agente y chat",
+      "tags": [
+        "KiCad",
+        "Python",
+        "LLM"
+      ],
+      "summary": "Plugin para KiCad 10: describes el circuito en un chat y el esquemático sale con las piezas y huellas de tus bibliotecas.",
+      "cover": "posts/kicad-ia/cover.png",
+      "sections": [
+        {
+          "heading": "Para qué existe",
+          "body": "Los bloques de siempre (un LED con su resistencia, un regulador, un conector USB-C) se dibujan una y otra vez. KiCad IA los arma desde una frase, con los símbolos y huellas que ya tienes configurados en KiCad. Si una pieza no está, no la inventa."
+        },
+        {
+          "heading": "Qué incluye",
+          "body": [
+            "Un chat local en Python que habla con KiCad 10 por su API de placa y escribe el `.kicad_sch` del proyecto, con copia de seguridad. El modelo puede ser Gemini, Ollama, OpenAI o cualquier URL compatible.",
+            "Antes de escribir, fija lo que pediste y elige cada pieza con una huella verificada. Conserva los componentes que ya están en el esquemático y en la placa, guarda las conversaciones y propone colocación y autoruteo con FreeRouting, que se aplican cuando confirmas."
+          ]
+        },
+        {
+          "heading": "Dónde seguir",
+          "body": "El recorrido completo está en el post [Un plugin de KiCad que habla con la IA](https://krisskira.github.io/personal-landing-page/tutoriales/kicad-conectado-a-un-llm). La instalación y los Ajustes, en la [página del proyecto](https://krisskira.github.io/kicad-ia-chat/). El código, en el [repositorio](https://github.com/krisskira/kicad-ia-chat)."
+        }
+      ]
+    },
+    {
       "slug": "klog",
       "schema": {
         "@type": "SoftwareApplication",

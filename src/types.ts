@@ -20,7 +20,6 @@ export type SiteContent = {
   orcid: string;
   nav: LinkTo[];
   cta: LinkTo;
-  payments: LinkTo;
   about: LinkTo;
   coffee: { label: string; href: string };
   social: { label: string; icon: string; href: string }[];
@@ -152,26 +151,6 @@ export type ContactContent = {
   submit?: string;
   sending?: string;
   success?: string;
-};
-
-export type PaymentsContent = {
-  title: string;
-  stepsTitle?: string;
-  steps?: { icon?: string; label: string }[];
-  closing?: string;
-  methodsLink?: string;
-  methodsTitle?: string;
-  methodsLead?: string;
-  methods?: { id: string; name: string; color?: string; text?: string; url?: string; cta?: string }[];
-  requestLink?: string;
-  requestMessage?: string;
-  disclaimer?: string;
-  currency?: string;
-  fields?: Record<string, string>;
-  terms?: string;
-  submit?: string;
-  successTitle?: string;
-  successBody?: string;
 };
 
 export type AboutItem = Record<string, string | undefined>;

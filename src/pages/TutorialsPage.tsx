@@ -49,6 +49,8 @@ function CoffeeBubble({ coffee }: any) {
   return (
     <a
       href={coffee.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group hidden items-center gap-[5px] rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue lg:flex"
     >
       <span className="relative flex h-12 w-[209px] items-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.12)]">
