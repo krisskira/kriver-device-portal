@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AlertCircle, CheckCircle2, FileText, Loader2, Lock, Mail, Send, X } from 'lucide-react';
 import { media } from '../assets/media';
 import { useContent } from '../hooks/useContent';
+import { encodeContactPayload, fileToBase64 } from '../lib/contactPayload';
 import { WhatsAppIcon } from './icons';
 import { TricolorBar } from './ui';
 import { useI18n } from '../hooks/useI18n';
@@ -102,10 +103,7 @@ export function ContactSection({ contact }: any) {
   const formRef = useRef<HTMLFormElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLHeadingElement>(null);
-  const timer = useRef(0);
   const { fields, attachment } = contact;
-
-  useEffect(() => () => window.clearTimeout(timer.current), []);
 
   useEffect(() => {
     if (status === 'sent') successRef.current?.focus();
@@ -139,7 +137,7 @@ export function ContactSection({ contact }: any) {
     if (attempted) setErrors(validate(formRef.current, file, contact.errors).found);
   }
 
-  function onSubmit(event: any) {
+  async function onSubmit(event: any) {
     event.preventDefault();
     const { found, data } = validate(event.currentTarget, file, contact.errors);
     setErrors(found);
@@ -150,21 +148,58 @@ export function ContactSection({ contact }: any) {
     }
 
     const name = String(data.get('nombre')).trim();
-    const services = data.getAll('servicios').join(', ');
+    const services = data.getAll('servicios').map((item) => String(item));
     const text = [
       `Hola, soy ${name}${data.get('empresa') ? ` de ${String(data.get('empresa')).trim()}` : ''}.`,
-      services ? `Me interesa: ${services}.` : '',
+      services.length ? `Me interesa: ${services.join(', ')}.` : '',
       String(data.get('mensaje')).trim(),
     ]
       .filter(Boolean)
       .join(' ');
     const whatsapp = site?.whatsapp ? `${site.whatsapp}?text=${encodeURIComponent(text)}` : '';
+    const honeypot = String(data.get('krv_hp') || '');
 
-    setStatus('sending');
-    timer.current = window.setTimeout(() => {
+    if (honeypot.trim()) {
       setResult({ name: name.split(/\s+/)[0], whatsapp });
       setStatus('sent');
-    }, 900);
+      return;
+    }
+
+    const prefix = import.meta.env.VITE_CONTACT_PREFIX;
+    const url = import.meta.env.VITE_CONTACT_URL;
+    if (!prefix || !url) {
+      setErrors((current) => ({ ...current, send: contact.errors.send }));
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const payload = {
+        nombre: name,
+        correo: String(data.get('correo')).trim(),
+        telefono: String(data.get('telefono')).trim(),
+        empresa: String(data.get('empresa') || '').trim(),
+        rol: String(data.get('rol') || '').trim(),
+        servicios: services,
+        mensaje: String(data.get('mensaje')).trim(),
+        krv_hp: '',
+        ts: Date.now(),
+        archivo: file ? { nombre: file.name, contenido: await fileToBase64(file) } : null,
+      };
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: encodeContactPayload(payload, prefix),
+        cache: 'no-store',
+        signal: AbortSignal.timeout(45000),
+      });
+      if (!response.ok) throw new Error('send');
+      setResult({ name: name.split(/\s+/)[0], whatsapp });
+      setStatus('sent');
+    } catch {
+      setStatus('idle');
+      setErrors((current) => ({ ...current, send: contact.errors.send }));
+    }
   }
 
   function reset() {
@@ -301,8 +336,12 @@ export function ContactSection({ contact }: any) {
               onSubmit={onSubmit}
               onChange={onChange}
               aria-busy={status === 'sending'}
-              className="mt-8 grid gap-x-8 gap-y-7 sm:grid-cols-2"
+              className="relative mt-8 grid gap-x-8 gap-y-7 sm:grid-cols-2"
             >
+              <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                <label htmlFor="contacto-krv-hp">No completar</label>
+                <input id="contacto-krv-hp" name="krv_hp" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
+              </div>
               <LineField
                 label={fields.name}
                 name="nombre"
@@ -462,7 +501,7 @@ export function ContactSection({ contact }: any) {
               </div>
               {hasErrors ? (
                 <p role="alert" className="-mt-3 text-sm text-[#ff9d9d] sm:col-span-2">
-                  {contact.errors.summary}
+                  {errors.send || contact.errors.summary}
                 </p>
               ) : null}
             </form>

@@ -319,7 +319,7 @@
         },
         {
           "heading": "Tema 02",
-          "body": "Se anota qué quedó simulado. En esta landing, por ejemplo, el formulario de contacto confirma en el navegador. Esa frontera tiene que verse, no esconderse."
+          "body": "Se anota qué quedó simulado. Si algo solo confirma en el navegador, esa frontera tiene que verse, no esconderse."
         }
       ],
       "published": "2026-05-21",

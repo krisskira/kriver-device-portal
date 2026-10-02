@@ -148,14 +148,15 @@
       "phone": "Escribe un teléfono válido.",
       "message": "Cuéntame un poco más (mínimo 20 caracteres).",
       "file": "El archivo debe ser un PDF de máximo 5 MB.",
-      "summary": "Revisa los campos marcados."
+      "summary": "Revisa los campos marcados.",
+      "send": "No pude enviar el mensaje. Inténtalo de nuevo en unos minutos."
     },
     "privacy": "Solo uso tus datos para responder a esta solicitud.",
     "submit": "Enviar mensaje",
     "sending": "Enviando…",
     "success": {
       "title": "¡Gracias, {name}!",
-      "text": "Recibimos tu mensaje en esta simulación. Al conectar el backend, saldrá desde el mismo formulario.",
+      "text": "Recibí tu mensaje. Te respondo a este correo.",
       "whatsapp": "Continuar por WhatsApp",
       "again": "Enviar otro mensaje"
     }
