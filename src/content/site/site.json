@@ -9,9 +9,10 @@
   "phoneDisplay": "+57 318 391 9187",
   "linkedin": "https://www.linkedin.com/in/cristian-david-vergara-gomez/",
   "whatsapp": "https://wa.me/573183919187",
-  "github": "https://github.com/krisskira",
+  "github": "https://krisskira.github.io/krisskira/",
   "facebook": "https://www.facebook.com/krisskira",
   "orcid": "https://orcid.org/0009-0005-0802-7042",
+  "portfolio": "https://krisskira.com",
   "nav": [
     { "label": "Servicios", "to": "/#servicios" },
     { "label": "Contacto", "to": "/#contacto" },
@@ -30,7 +31,7 @@
     {
       "label": "GitHub",
       "icon": "github",
-      "href": "https://github.com/krisskira"
+      "href": "https://krisskira.github.io/krisskira/"
     },
     {
       "label": "Facebook",

@@ -1,5 +1,4 @@
-# Este archivo se regenera durante `npm run build`.
 User-agent: *
 Allow: /
 
-Sitemap: https://krisskira.github.io/personal-landing-page/sitemap.xml
+Sitemap: https://kriverdevice.krisskira.com/sitemap.xml

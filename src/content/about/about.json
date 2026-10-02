@@ -3,7 +3,10 @@
   "name": "Crhistian David Vergara Gómez",
   "alternateName": "Cristian David Vergara Gómez",
   "photo": "about/profile-3d.webp",
-  "role": { "es": "Desarrollador full stack y móvil", "en": "Full-stack and mobile developer" },
+  "role": {
+    "es": "Fundador y CEO de Kriver Devices · Desarrollador full stack y móvil",
+    "en": "Founder and CEO of Kriver Devices · Full-stack and mobile developer"
+  },
   "location": "Palmira, Valle del Cauca, Colombia",
   "since": "2016-12",
   "summary": {

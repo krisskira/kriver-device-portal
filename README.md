@@ -1,4 +1,4 @@
-<a href="https://krisskira.github.io/personal-landing-page/">
+<a href="https://kriverdevice.krisskira.com/">
   <img src="public/brand/og-cover.png" alt="Kriver Devices, technology solutions" width="100%" />
 </a>
 
@@ -6,7 +6,7 @@
 
 A studio for mobile apps, websites and connected-home systems, from the idea through production. Based in Colombia, working remotely.
 
-[Site](https://krisskira.github.io/personal-landing-page/) · [LinkedIn](https://www.linkedin.com/in/cristian-david-vergara-gomez/) · [Email](mailto:krisskira@gmail.com) · [Leer en español](README.es.md)
+[Site](https://kriverdevice.krisskira.com/) · [LinkedIn](https://www.linkedin.com/in/cristian-david-vergara-gomez/) · [Email](mailto:krisskira@gmail.com) · [Leer en español](README.es.md)
 
 ## What I build
 
@@ -21,7 +21,7 @@ The site also holds tutorials, project write-ups and a short page about how I go
 - **Home** — services, a sample of tutorials and a contact form.
 - **Tutorials** — videos and posts, filterable by type.
 - **Projects** — selected work, each with its own page.
-- **About** — the path from firmware to the products I work on now.
+- **About** — author and CEO information within Kriver Devices. The full portfolio is at [krisskira.com](https://krisskira.com).
 
 ## Run it
 
@@ -35,6 +35,6 @@ npm run build
 
 Copy `.env` and set `VITE_SITE_URL` to the public URL. Content lives in `src/content/`. English strings are in `src/i18n/en.json`: the key is the Spanish text, exact.
 
-The site publishes from `.github/workflows/pages.yml` on every push to `main` that touches the app. In the repository: **Settings → Pages → Source: GitHub Actions**. The current URL is <https://krisskira.github.io/personal-landing-page/>.
+The site publishes from `.github/workflows/pages.yml` on every push to `main` that touches the app. In the repository: **Settings → Pages → Source: GitHub Actions**. The current URL is <https://kriverdevice.krisskira.com/>.
 
 Author: **Crhistian David Vergara Gómez** · **krisskira@gmail.com**

@@ -34,7 +34,7 @@
         },
         {
           "heading": "Dónde seguir",
-          "body": "El relato del ciclo, las trazas y el autoajuste están en el tutorial [HotPlate: reflow SMD sin horno](https://krisskira.github.io/personal-landing-page/tutoriales/hotplate-reflow-smd). El código, la PCB en KiCad y la carcasa están en el [repositorio](https://github.com/krisskira/smd-soldering-hotplate). Trabaja con red eléctrica: bajo tu responsabilidad."
+          "body": "El relato del ciclo, las trazas y el autoajuste están en el tutorial [HotPlate: reflow SMD sin horno](https://kriverdevice.krisskira.com/tutoriales/hotplate-reflow-smd). El código, la PCB en KiCad y la carcasa están en el [repositorio](https://github.com/krisskira/smd-soldering-hotplate). Trabaja con red eléctrica: bajo tu responsabilidad."
         }
       ]
     },
@@ -71,7 +71,7 @@
         },
         {
           "heading": "Dónde seguir",
-          "body": "El recorrido completo está en el post [Un plugin de KiCad que habla con la IA](https://krisskira.github.io/personal-landing-page/tutoriales/kicad-conectado-a-un-llm). La instalación y los Ajustes, en la [página del proyecto](https://krisskira.github.io/kicad-ia-chat/). El código, en el [repositorio](https://github.com/krisskira/kicad-ia-chat)."
+          "body": "El recorrido completo está en el post [Un plugin de KiCad que habla con la IA](https://kriverdevice.krisskira.com/tutoriales/kicad-conectado-a-un-llm). La instalación y los Ajustes, en la [página del proyecto](https://krisskira.github.io/kicad-ia-chat/). El código, en el [repositorio](https://github.com/krisskira/kicad-ia-chat)."
         }
       ]
     },
@@ -107,7 +107,7 @@
         },
         {
           "heading": "Dónde seguir",
-          "body": "El recorrido de la ingesta, el token y la búsqueda prevista está en el tutorial [kLog: los logs se quedan en tu servidor](https://krisskira.github.io/personal-landing-page/tutoriales/klog-registros-que-se-buscan)."
+          "body": "El recorrido de la ingesta, el token y la búsqueda prevista está en el tutorial [kLog: los logs se quedan en tu servidor](https://kriverdevice.krisskira.com/tutoriales/klog-registros-que-se-buscan)."
         }
       ]
     },

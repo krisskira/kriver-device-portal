@@ -1,28 +1,22 @@
 # Kriver Devices
 
-Kriver Devices es el portafolio profesional de Crhistian David Vergara Gómez
-(también escrito Cristian), desarrollador full stack y móvil en Palmira, Colombia.
-Presenta servicios de desarrollo de aplicaciones móviles, sitios web,
-soluciones IoT y prototipos, además de proyectos personales y tutoriales.
+Kriver Devices es un estudio de aplicaciones móviles, sitios web y sistemas
+para el hogar conectado. El portal presenta sus servicios, proyectos y
+tutoriales.
 
 ## Sobre el autor
 
-- Más de diez años construyendo software, desde diciembre de 2016. Camino de aprendizaje: firmware en C para PIC y web en PHP (2016–2019), móvil con React Native, Swift y Kotlin con Clean Architecture y DDD (2019–2023), backend Python/FastAPI, MongoDB y machine learning (2023–2024), liderazgo de frontend con React y AWS serverless (2024–2025), y productos SaaS, GraphQL e IA aplicada (2025–2026).
-- Backend: Node.js, NestJS, TypeScript, Python (FastAPI, Django) y Go, con PostgreSQL, MySQL, MongoDB y Redis.
-- Frontend: React y Angular. Móvil: iOS Swift y SwiftUI, React Native, Flutter y Kotlin.
-- Cloud y DevOps: AWS (Lambda, SAM, Cognito), GCP, DigitalOcean, Docker, NGINX y Linux.
-- IA: LangChain, RAG, OpenAI y Llama. Hardware: C, AVR, ESP32, STM32, PIC y KiCad.
-- Formación: Tecnología en Desarrollo de Software (UNICUCES, 2022–2025) y Especialización Tecnológica en Desarrollo de Aplicaciones Móviles (SENA, 2019).
-- Certificaciones: Diseño de experiencias UX/UI (UPB, 2025), Inteligencia Artificial (Talento Tech 2.0, 2025), Desarrollo de aplicaciones con SwiftUI (Platzi, 2025) y EF SET English Certificate C1 (2023).
-- Idiomas: español nativo, inglés B1+.
-- Perfil completo: [Sobre mí](/sobre-mi)
+- Fundador y autor: Crhistian David Vergara Gómez.
+- Perfil del autor dentro del portal: [Sobre mí](/sobre-mi).
+- Portafolio, experiencia, habilidades y trayectoria: https://krisskira.com/
+- Perfil de GitHub: https://krisskira.github.io/krisskira/
 
 ## Secciones
 
 - [Inicio](/)
 - [Proyectos](/proyectos)
 - [Tutoriales y blog](/tutoriales)
-- [Sobre mí](/sobre-mi)
+- [Autor y CEO](/sobre-mi)
 - [Contacto](/#contacto)
 
 ## Publicaciones
@@ -43,6 +37,7 @@ soluciones IoT y prototipos, además de proyectos personales y tutoriales.
 - Correo: krisskira@gmail.com
 - Teléfono y WhatsApp: +57 318 391 9187
 - LinkedIn: https://www.linkedin.com/in/cristian-david-vergara-gomez/
-- GitHub: https://github.com/krisskira
+- GitHub: https://krisskira.github.io/krisskira/
+- Portafolio: https://krisskira.com/
 - Facebook: https://www.facebook.com/krisskira
 - ORCID: https://orcid.org/0009-0005-0802-7042

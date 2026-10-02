@@ -7,9 +7,8 @@ import { useI18n } from '../hooks/useI18n';
 
 const SITE_NAME = 'Kriver Devices';
 const OWNER = 'Crhistian David Vergara Gómez';
-// Mismo nodo Person que el perfil en GitHub Pages (landing-page/content/site.json → #author).
 const PROFILE_URL = 'https://krisskira.github.io/krisskira/';
-const PERSON_ID = `${PROFILE_URL}#author`;
+const PORTFOLIO_URL = 'https://krisskira.com/';
 const INDEX_ROBOTS = 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
 const THIN_ROBOTS = 'noindex, follow';
 const PRIVATE_ROBOTS = 'noindex, nofollow';
@@ -91,11 +90,11 @@ function breadcrumb(base: any, trail: any) {
 }
 
 function personNode(base: any, site: any, about: any, t: any, language: any) {
-  const sameAs = [PROFILE_URL, site?.linkedin, site?.github, site?.facebook, site?.orcid].filter(Boolean);
+  const sameAs = [...new Set([PORTFOLIO_URL, PROFILE_URL, site?.linkedin, site?.github, site?.facebook, site?.orcid].filter(Boolean))];
   const alternateName = [about?.alternateName, 'krisskira'].filter(Boolean);
   const node = {
     '@type': 'Person',
-    '@id': PERSON_ID,
+    '@id': `${base}/sobre-mi#person`,
     name: about?.name || site?.owner || OWNER,
     givenName: 'Crhistian David',
     familyName: 'Vergara Gómez',
@@ -217,7 +216,7 @@ export function Seo() {
       },
       '/sobre-mi': {
         title: t('seo.aboutTitle'),
-        description: aboutQuery.data?.summary || t('seo.aboutDescription'),
+        description: t('seo.aboutDescription'),
         type: 'profile',
         image: aboutQuery.data?.photo,
         profile: true,
@@ -294,9 +293,8 @@ export function Seo() {
     setLink('link[rel="alternate"][hreflang="en"]', { rel: 'alternate', hreflang: 'en', href: englishUrl });
     setLink('link[rel="alternate"][hreflang="x-default"]', { rel: 'alternate', hreflang: 'x-default', href: pageUrl });
 
-    const person = { '@id': PERSON_ID };
+    const person = { '@id': `${base}/sobre-mi#person` };
     const business = { '@id': `${base}/#business` };
-    const sameAs = [site?.linkedin, site?.github, site?.facebook, site?.orcid].filter(Boolean);
     const graph: Record<string, unknown>[] = [
       {
         '@type': 'WebSite',
@@ -324,7 +322,6 @@ export function Seo() {
           { '@type': 'Place', name: locale === 'en' ? 'Remote' : 'Remoto' },
         ],
         knowsAbout: ['React', 'React Native', 'Node.js', 'TypeScript', 'Python', 'Go', 'Swift', 'Kotlin', 'AWS', 'Docker', 'ESP32', 'STM32', 'IoT'],
-        sameAs,
         founder: person,
         contactPoint: {
           '@type': 'ContactPoint',

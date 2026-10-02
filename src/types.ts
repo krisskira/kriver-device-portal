@@ -18,6 +18,7 @@ export type SiteContent = {
   github: string;
   facebook: string;
   orcid: string;
+  portfolio: string;
   nav: LinkTo[];
   cta: LinkTo;
   about: LinkTo;

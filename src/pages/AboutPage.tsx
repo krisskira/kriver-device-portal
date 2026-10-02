@@ -1,6 +1,6 @@
 import type { AboutContent, SiteContent } from '../types';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BadgeCheck, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Globe, Mail, MapPin } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 import { QueryState } from '../components/QueryState';
 import { Rich } from '../components/ArticleView';
@@ -25,6 +25,7 @@ export function AboutPage() {
 function AboutContent({ data, site }: any) {
   const { locale, t } = useI18n();
   const links = [
+    site?.portfolio && { label: locale === 'en' ? 'Portfolio' : 'Portafolio', href: site.portfolio, icon: Globe },
     site?.linkedin && { label: 'LinkedIn', href: site.linkedin, icon: LinkedInIcon },
     site?.github && { label: 'GitHub', href: site.github, icon: GitHubIcon },
     site?.facebook && { label: 'Facebook', href: site.facebook, icon: FacebookIcon },

@@ -64,9 +64,9 @@ export const messages = {
     'seo.serviceIot': 'Soluciones IoT y prototipos',
     'seo.services': 'Servicios tecnológicos',
     'seo.about': 'Sobre mí',
-    'seo.aboutTitle': 'Sobre mí: Crhistian David Vergara Gómez, desarrollador full stack y móvil | Kriver Devices',
+    'seo.aboutTitle': 'Crhistian David Vergara Gómez, fundador y CEO | Kriver Devices',
     'seo.aboutDescription':
-      'Más de diez años construyendo software web, móvil e IoT: experiencia, conocimientos, formación y certificaciones.',
+      'Perfil del fundador y CEO de Kriver Devices. Su portafolio, experiencia y trayectoria completas están en krisskira.com.',
     'seo.keywords':
       'desarrollo de apps móviles, desarrollo web, full stack, IoT, ESP32, STM32, React, React Native, Node.js, Swift, Colombia, Kriver Devices',
     'about.photoAlt': 'Foto de {name}',
@@ -136,9 +136,9 @@ export const messages = {
     'seo.serviceIot': 'IoT solutions and prototypes',
     'seo.services': 'Technology services',
     'seo.about': 'About me',
-    'seo.aboutTitle': 'About Crhistian David Vergara Gómez, full-stack and mobile developer | Kriver Devices',
+    'seo.aboutTitle': 'Crhistian David Vergara Gómez, founder and CEO | Kriver Devices',
     'seo.aboutDescription':
-      'Over ten years building web, mobile and IoT software: experience, skills, education and certifications.',
+      'Profile of the founder and CEO of Kriver Devices. His complete portfolio, experience and career are at krisskira.com.',
     'seo.keywords':
       'mobile app development, web development, full stack, IoT, ESP32, STM32, React, React Native, Node.js, Swift, Colombia, Kriver Devices',
     'about.photoAlt': 'Photo of {name}',

@@ -1,102 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Este archivo se regenera durante `npm run build`. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/tutoriales</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/tutoriales" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/tutoriales?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/tutoriales" />
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://kriverdevice.krisskira.com/tutoriales</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/tutoriales" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/tutoriales?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/tutoriales" />
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/proyectos</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/proyectos" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/proyectos?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/proyectos" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/proyectos</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/sobre-mi</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/sobre-mi" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/sobre-mi?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/sobre-mi" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/sobre-mi</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/sobre-mi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/sobre-mi?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/sobre-mi" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/tutoriales/hotplate-reflow-smd</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/tutoriales/hotplate-reflow-smd" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/tutoriales/hotplate-reflow-smd?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/tutoriales/hotplate-reflow-smd" />
+    <loc>https://kriverdevice.krisskira.com/tutoriales/hotplate-reflow-smd</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/tutoriales/hotplate-reflow-smd" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/tutoriales/hotplate-reflow-smd?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/tutoriales/hotplate-reflow-smd" />
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/tutoriales/klog-registros-que-se-buscan</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/tutoriales/klog-registros-que-se-buscan" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/tutoriales/klog-registros-que-se-buscan?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/tutoriales/klog-registros-que-se-buscan" />
+    <loc>https://kriverdevice.krisskira.com/tutoriales/klog-registros-que-se-buscan</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/tutoriales/klog-registros-que-se-buscan" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/tutoriales/klog-registros-que-se-buscan?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/tutoriales/klog-registros-que-se-buscan" />
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/proyectos/hotplate-smd</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/proyectos/hotplate-smd" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/proyectos/hotplate-smd?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/proyectos/hotplate-smd" />
+    <loc>https://kriverdevice.krisskira.com/tutoriales/kicad-conectado-a-un-llm</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/tutoriales/kicad-conectado-a-un-llm" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/tutoriales/kicad-conectado-a-un-llm?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/tutoriales/kicad-conectado-a-un-llm" />
     <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kriverdevice.krisskira.com/proyectos/hotplate-smd</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos/hotplate-smd" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos/hotplate-smd?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos/hotplate-smd" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/proyectos/klog</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/proyectos/klog" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/proyectos/klog?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/proyectos/klog" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/proyectos/kicad-ia</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos/kicad-ia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos/kicad-ia?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos/kicad-ia" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/proyectos/fabricacion-cnc</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/proyectos/fabricacion-cnc" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/proyectos/fabricacion-cnc?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/proyectos/fabricacion-cnc" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/proyectos/klog</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos/klog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos/klog?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos/klog" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/proyectos/gadgets-iot</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/proyectos/gadgets-iot" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/proyectos/gadgets-iot?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/proyectos/gadgets-iot" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/proyectos/fabricacion-cnc</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos/fabricacion-cnc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos/fabricacion-cnc?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos/fabricacion-cnc" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://krisskira.github.io/personal-landing-page/proyectos/panel-del-hogar</loc>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://krisskira.github.io/personal-landing-page/proyectos/panel-del-hogar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krisskira.github.io/personal-landing-page/proyectos/panel-del-hogar?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krisskira.github.io/personal-landing-page/proyectos/panel-del-hogar" />
-    <lastmod>2026-10-01</lastmod>
+    <loc>https://kriverdevice.krisskira.com/proyectos/gadgets-iot</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos/gadgets-iot" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos/gadgets-iot?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos/gadgets-iot" />
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kriverdevice.krisskira.com/proyectos/panel-del-hogar</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://kriverdevice.krisskira.com/proyectos/panel-del-hogar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kriverdevice.krisskira.com/proyectos/panel-del-hogar?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kriverdevice.krisskira.com/proyectos/panel-del-hogar" />
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

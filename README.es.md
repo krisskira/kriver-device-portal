@@ -1,4 +1,4 @@
-<a href="https://krisskira.github.io/personal-landing-page/">
+<a href="https://kriverdevice.krisskira.com/">
   <img src="public/brand/og-cover.png" alt="Kriver Devices, soluciones tecnológicas" width="100%" />
 </a>
 
@@ -6,7 +6,7 @@
 
 Estudio de aplicaciones móviles, sitios web y sistemas para el hogar conectado, desde la idea hasta producción. En Colombia, con trabajo remoto.
 
-[Sitio](https://krisskira.github.io/personal-landing-page/) · [LinkedIn](https://www.linkedin.com/in/cristian-david-vergara-gomez/) · [Correo](mailto:krisskira@gmail.com) · [Read in English](README.md)
+[Sitio](https://kriverdevice.krisskira.com/) · [LinkedIn](https://www.linkedin.com/in/cristian-david-vergara-gomez/) · [Correo](mailto:krisskira@gmail.com) · [Read in English](README.md)
 
 ## Qué construyo
 
@@ -21,7 +21,7 @@ El sitio también guarda tutoriales, fichas de proyectos y una página breve de 
 - **Inicio** — servicios, una muestra de tutoriales y el formulario de contacto.
 - **Tutoriales** — videos y posts, filtrables por tipo.
 - **Proyectos** — trabajos seleccionados, cada uno con su página.
-- **Sobre mí** — el recorrido del firmware a los productos en los que trabajo ahora.
+- **Sobre mí** — información del autor y CEO dentro de Kriver Devices. El portafolio completo está en [krisskira.com](https://krisskira.com).
 
 ## Arranque
 
@@ -35,6 +35,6 @@ npm run build
 
 Copia `.env` y define `VITE_SITE_URL` con la URL pública. El contenido vive en `src/content/`. Los textos en inglés están en `src/i18n/en.json`: la clave es el texto en español, exacto.
 
-El sitio se publica con `.github/workflows/pages.yml` en cada push a `main` que toque la app. En el repositorio: **Settings → Pages → Source: GitHub Actions**. La URL actual es <https://krisskira.github.io/personal-landing-page/>.
+El sitio se publica con `.github/workflows/pages.yml` en cada push a `main` que toque la app. En el repositorio: **Settings → Pages → Source: GitHub Actions**. La URL actual es <https://kriverdevice.krisskira.com/>.
 
 Autor: **Crhistian David Vergara Gómez** · **krisskira@gmail.com**
